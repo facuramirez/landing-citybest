@@ -188,6 +188,7 @@ section {
       &.active {
         > .label {
           border-bottom: 4px solid $secondary-color !important;
+        
         }
       }
       .nav-icon {
@@ -221,6 +222,15 @@ section {
   .nav-link {
     color: white !important;
   }
+}
+
+.linknavs{
+  display: block;
+        color: rgb(255, 255, 255);
+        text-decoration: none;
+        transition: all 0.3s ease-in-out 0s;
+       box-sizing: border-box;
+         font-weight: 600 !important;
 }
 
 .footer {

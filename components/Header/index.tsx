@@ -1,5 +1,14 @@
 import { Nav, Navbar } from "react-bootstrap";
 
+const syleNavLink = {
+    display: 'block',
+    color: '#fff',
+    textDecoration: 'none',
+    transition: 'all .3s ease-in-out',
+    boxSizing:' border-box',
+    fonWeight: 600,
+}
+
 export default function Header({ activeItem = "" }) {
   return (
     <Navbar expand="lg" className="main-navigation">
@@ -20,7 +29,7 @@ export default function Header({ activeItem = "" }) {
               target={e.key === "help" && "_BLANK"}
             >
               <NavIcon />
-              <p className="label">{e.label}</p>
+              <p className="linknavs">{e.label}</p>
             </Nav.Link>
           ))}
         </Nav>
@@ -36,33 +45,33 @@ function NavIcon() {
 const menuItems = [
   {
     key: "passengers",
-    label: "Pasajeros",
+    label: "PASAJEROS",
     link: "/pasajeros",
   },
   {
     key: "drivers",
-    label: "Conductores",
+    label: "CONDUCTORES",
     link: "/conductores",
   },
   {
     key: "newspaper",
-    label: "Prensa",
+    label: "PRENSA",
     link: "/prensa",
   },
   {
     key: "competition",
-    label: "Concurso",
+    label: "CONCURSO",
     link: "/concurso",
   },
   {
     key: "help",
-    label: "Ayuda",
+    label: "AYUDA",
     link:
       "https://api.whatsapp.com/send?phone=56965734473&text=Necesito%20informaci%C3%B3n",
   },
   {
     key: "contact",
-    label: "Contacto",
+    label: "CONTACTO",
     link: "/contacto",
   },
 ];
