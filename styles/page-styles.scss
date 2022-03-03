@@ -1,0 +1,725 @@
+@import "bootstrap/dist/css/bootstrap.min.css";
+
+$primary-color: #441a7b;
+$secondary-color: #36de94;
+$grey: #f4f4f6;
+
+@font-face {
+  font-family: "Overpass", sans-serif !important;
+  /* Antes de descargar el archivo, le decimos al buscador
+  que intente buscar en local la fuente con nombre
+  Cabin, Cabin Regular o Cabin-Regular */
+  /*  src: local("Avenir"), local("Avenir-Medium-09"),
+    url(./../public/fonts/Avenir-Medium-09.ttf) format("truetype"); */
+}
+
+body {
+  font-family: "Overpass", sans-serif !important;
+}
+
+.text-strong {
+  font-weight: bold !important;
+}
+
+section {
+  &.bg-primary {
+    color: white;
+    h2,
+    h3,
+    h4 {
+      color: white !important;
+    }
+  }
+}
+
+.btn-xl {
+  padding: 0.6rem 3.5rem;
+  font-size: 1.4rem;
+  line-height: 2;
+}
+
+a,
+button,
+input {
+  box-shadow: none !important;
+}
+
+.text-primary {
+  color: $primary-color !important;
+}
+
+.text-secondary {
+  color: $secondary-color !important;
+}
+
+.bg-primary {
+  background-color: $primary-color !important;
+}
+
+.bg-secondary {
+  background-color: $secondary-color !important;
+}
+
+.btn {
+  border-radius: 3em;
+  box-shadow: none !important;
+}
+
+.btn-outline {
+  background-color: white !important;
+  color: $primary-color !important;
+  border: 0 !important;
+
+  &:hover {
+    background-color: $secondary-color !important;
+    color: white !important;
+    border: inherit !important;
+  }
+}
+
+section {
+  &.banner {
+    padding: 3em 2.5em;
+
+    &.bg-secondary {
+      color: $primary-color !important;
+    }
+
+    .section-img {
+      max-width: 800px;
+    }
+  }
+}
+
+.rotate-180 {
+  transform: rotate(180deg);
+}
+
+.img-arrows {
+  width: 100%;
+  max-width: 250px;
+}
+
+.main-video {
+  width: 100%;
+}
+
+.feature-item-section {
+  .title {
+    font-weight: bold;
+  }
+  img {
+    width: 100%;
+    max-width: 100px;
+  }
+}
+
+.position-relative {
+  position: relative;
+}
+
+.avail-phone-img {
+  position: absolute;
+  width: 250px;
+  border-radius: 20px;
+  height: auto;
+
+  top: -110px;
+  img {
+    width: 100%;
+  }
+}
+
+.vehicles-section {
+  padding-top: 5em !important;
+}
+
+.jarallax {
+  background-color: #441a7b;
+}
+
+.vehicle-type-icon {
+  font-size: 20px;
+  color: white;
+  border-radius: 100%;
+  width: 50px;
+  height: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: $primary-color;
+}
+
+.trip {
+  display: grid;
+  gap: 1em;
+  grid-template-columns: 30px 1fr 30px;
+  align-items: center;
+  .point {
+    width: 20px;
+    height: 20px;
+    display: flex;
+    background-color: white;
+    justify-content: center;
+    align-items: center;
+    color: $primary-color;
+    border-radius: 100%;
+    font-size: 10px;
+  }
+  .line {
+    width: 100%;
+    height: 4px;
+    background-color: $secondary-color;
+  }
+}
+
+.main-navigation {
+  padding-left: 15%;
+  padding-right: 15%;
+  background-color: $primary-color;
+  color: white;
+  .main-menu {
+    .nav-link {
+      padding: 1em 1.3em 0;
+      .label {
+        margin: 0;
+        padding-bottom: 1em;
+      }
+      &.active {
+        > .label {
+          border-bottom: 4px solid $secondary-color !important;
+        }
+      }
+      .nav-icon {
+        opacity: 0;
+        transition: opacity 0.3s ease-in-out;
+        width: 20px;
+      }
+
+      display: grid;
+      gap: 10px;
+      grid-template-columns: 20px 1fr;
+
+      &:hover {
+        .nav-icon {
+          opacity: 1;
+        }
+      }
+    }
+  }
+  .navbar-toggler {
+    .navbar-toggler-icon {
+      color: white !important;
+      background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' width='30' height='30' viewBox='0 0 30 30'%3e%3cpath stroke='white' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
+    }
+  }
+  .navbar-brand {
+    img {
+      max-width: 90px;
+    }
+  }
+  .nav-link {
+    color: white !important;
+  }
+}
+
+.footer {
+  padding: 4em 0px;
+  background-color: $grey;
+  .footer-title {
+    font-weight: bold;
+    font-size: 20px;
+  }
+  .footer-policy {
+    font-size: 15px;
+    line-height: 1.5rem;
+  }
+  .footer-company {
+    font-size: 14px;
+  }
+  .social-icons {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(40px, 40px));
+    gap: 10px;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    .social-icon {
+      background-color: $primary-color;
+      border-radius: 100%;
+      width: 40px;
+      height: 40px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      color: white;
+      text-decoration: none;
+    }
+  }
+}
+
+.footer-countries {
+  color: grey;
+}
+
+.highway {
+  display: grid;
+  grid-template-columns: repeat(3, 80px);
+  gap: 0.5em;
+  padding: 1em 0em;
+  .highway-item {
+    width: 80px;
+    height: 20px;
+    border-radius: 3em;
+    background-color: white;
+  }
+  &.primary {
+    .highway-item {
+      background-color: $primary-color;
+    }
+  }
+}
+
+.main-social-icons {
+  display: flex;
+  justify-content: space-between;
+  img {
+    width: 50px;
+  }
+}
+
+.h3 {
+  font-size: 1.75rem;
+}
+
+.flags-section {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(40px, 40px));
+  gap: 0.5em;
+  margin-top: 1em;
+  margin-bottom: 1em;
+  img {
+    width: 40px;
+  }
+}
+.initial-image {
+  max-width: 800px;
+  width: 100%;
+}
+
+.fact-container {
+  display: grid !important;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+}
+.fact-item {
+  padding: 2em 0.2em;
+  padding-bottom: 5px;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  &.active {
+    .fact-item-line {
+      opacity: 1;
+    }
+  }
+
+  .fact-item-icon {
+    img {
+      width: 70px;
+      height: 70px;
+    }
+  }
+
+  .fact-item-title {
+    font-weight: bold;
+    margin-bottom: 1em;
+  }
+
+  .fact-item-content {
+    padding: 2em;
+    height: 100%;
+  }
+
+  .fact-item-line {
+    border-radius: 8px;
+    height: 4px;
+    width: 100%;
+    background-color: $primary-color;
+    opacity: 0;
+    transition: opacity 0.3s ease-in-out;
+  }
+
+  &:hover {
+    .fact-item-line {
+      opacity: 1;
+    }
+  }
+}
+
+.contact-form {
+  padding: 20px;
+  background-color: $primary-color;
+  border-radius: 20px;
+  .form-label {
+    color: white;
+  }
+  .form-control {
+    border: 0;
+  }
+}
+
+.social-contact {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(50px, 50px));
+  gap: 10px;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  font-size: 30px;
+  .social-icon {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    img {
+      width: 100%;
+      padding: 5px;
+      width: 80%;
+    }
+  }
+}
+
+.contact-details-item {
+  background-color: #dfdfdf;
+  padding: 20px;
+  border-radius: 20px;
+}
+
+.btn {
+  .btn-icon,
+  .btn-icon-hover {
+    width: 30px;
+  }
+  .btn-icon-hover {
+    opacity: 0;
+  }
+
+  &.btn-outline {
+    &:hover {
+      .btn-icon-hover {
+        opacity: 1;
+      }
+      .btn-icon {
+        opacity: 0;
+      }
+    }
+  }
+}
+
+.carousel .slide .legend {
+  font-family: "Overpass", sans-serif !important;
+  font-size: 16px !important;
+}
+
+.news-caption {
+  img {
+    width: 100px;
+  }
+
+  p {
+    font-size: 13px;
+    margin-top: 1em;
+  }
+
+  .content {
+    padding: 0.4em;
+  }
+}
+
+.new-carousel-img {
+  max-width: 800px;
+  width: 100%;
+}
+
+.carousel .slide .legend {
+  border-radius: 0 !important;
+  text-align: left !important;
+  padding: 1rem 2rem !important;
+  padding-left: 5rem !important;
+  .title {
+    font-size: 24px;
+  }
+  a {
+    cursor: pointer;
+    &:hover {
+      color: $secondary-color !important;
+    }
+  }
+}
+
+.carousel .thumb {
+  min-width: 180px !important;
+  width: 100% !important;
+}
+
+.carousel .thumbs {
+  white-space: normal !important;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 220px));
+  gap: 10px;
+}
+
+.carousel .thumb {
+  white-space: normal !important;
+}
+
+.details-footer {
+  color: $primary-color;
+  font-weight: bold;
+  margin: 0;
+}
+
+.news-items {
+  display: grid;
+  gap: 1rem;
+  width: 100%;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+
+  .news-item {
+    background-color: #dfdfdf;
+
+    .content {
+      padding: 1.5em 1.5em;
+    }
+    img {
+      width: 100%;
+      margin-bottom: 0.5em;
+    }
+    .title {
+      font-size: 20px;
+    }
+    .desc {
+      margin-top: 0.8em;
+    }
+  }
+}
+
+.main-header-carousel {
+  .slide {
+    position: relative;
+    .banner-overlay {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      left: 0;
+      top: 0;
+      > .container,
+      > .row {
+        height: 100%;
+      }
+      .container {
+        .row {
+          display: flex;
+          align-items: flex-end;
+        }
+      }
+    }
+  }
+
+  .city-logo {
+    max-width: 100px;
+  }
+
+  .main-carousel-background {
+    &.passenger {
+      background-image: url(/img/pasajero/pasajero.jpg);
+    }
+    &.diver {
+      background-image: url(/img/conductor/conductor.jpg);
+    }
+    &.competition {
+      background-image: url(/img/concurso/concurso.jpg);
+    }
+
+    &.home {
+      &.home-1 {
+        background-image: url(/img/home/home-01.jpg);
+      }
+      &.home-2 {
+        background-image: url(/img/home/home-02.jpg);
+      }
+
+      &.home-3 {
+        background-image: url(/img/home/home-03.jpg);
+      }
+    }
+
+    background-size: cover;
+    background-repeat: no-repeat;
+    display: block;
+    height: 400px;
+  }
+
+  .top-logo {
+    max-width: 150px;
+  }
+
+  .main-image {
+    max-width: 400px;
+  }
+
+  .main-carousel-img {
+    width: 100%;
+    height: auto;
+  }
+}
+
+.travel-title {
+  font-size: 4em;
+}
+
+.download-section-item {
+  position: absolute;
+  color: white;
+  bottom: 50px;
+  .download-icon {
+    width: 40px;
+    height: 40px;
+  }
+}
+
+.download-section-item-mobile {
+  color: white;
+  width: 100%;
+  align-items: center;
+  background-color: $primary-color;
+  flex-direction: column;
+  .download-icon {
+    width: 40px;
+    height: 40px;
+  }
+}
+@media (min-width: 0px) {
+  .main-navigation {
+    font-size: 20px !important;
+  }
+
+  .initial-banner {
+    padding: 1em 1em !important;
+    img {
+      max-width: 100%;
+      height: auto;
+      width: 100%;
+    }
+  }
+
+  .carousel .thumbs {
+    display: none;
+  }
+
+  .carousel .slide .legend {
+    position: relative !important;
+    top: inherit !important;
+    left: inherit !important;
+    bottom: inherit !important;
+    margin-left: 0 !important;
+    width: 100% !important;
+    opacity: 1 !important;
+    margin-top: 10px !important;
+    margin-bottom: 2em !important;
+    background-color: $primary-color !important;
+  }
+
+  .news-section {
+    padding: 3em 1rem !important;
+  }
+
+  .banner-title-image {
+    max-width: 300px;
+  }
+  .competition-phone {
+    margin-left: inherit;
+  }
+
+  .main-carousel-background {
+    &.home {
+      background-size: 100% 120px !important;
+      height: 120px !important;
+    }
+  }
+}
+
+// Small devices (landscape phones, 576px and up)
+@media (min-width: 576px) {
+  .main-navigation {
+    font-size: 20px !important;
+  }
+}
+
+// Medium devices (tablets, 768px and up)
+@media (min-width: 768px) {
+  .main-navigation {
+    font-size: inherit !important;
+  }
+
+  .carousel .thumbs {
+    display: grid;
+  }
+
+  .main-carousel-background {
+    &.home {
+      background-size: cover !important;
+      height: 400px !important;
+    }
+  }
+}
+
+// Large devices (desktops, 992px and up)
+@media (min-width: 992px) {
+  .main-navigation {
+  }
+
+  .initial-banner {
+    padding: 3em 2.5em !important;
+
+    img {
+      max-width: 800px;
+      height: auto;
+      width: 100%;
+    }
+  }
+
+  .carousel .slide .legend {
+    position: absolute !important;
+    bottom: 40px !important;
+    left: 50% !important;
+    margin-left: -45% !important;
+    width: 90% !important;
+    // border-radius: 10px !important;
+    background: #000;
+    color: #fff;
+    padding: 10px;
+    font-size: 12px;
+    text-align: center;
+    opacity: 1 !important;
+  }
+
+  .news-section {
+    padding: 3em 2.5rem !important;
+  }
+
+  .banner-title-image {
+    max-width: 100%;
+  }
+
+  .competition-phone {
+    margin-left: -8em;
+  }
+}
+
+// Extra large devices (large desktops, 1200px and up)
+@media (min-width: 1200px) {
+  .main-navigation {
+  }
+}
