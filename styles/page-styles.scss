@@ -286,7 +286,14 @@ section {
   text-decoration: none;
   transition: all 0.3s ease-in-out 0s;
   box-sizing: border-box;
-  font-weight: 600 !important;
+  font-family: 'SantanderFont';
+}
+
+.linknavs2 {
+  display: block;
+  color: white;
+  font-size: 80%;
+  font-family: 'SantanderFont';
 }
 
 .footer {

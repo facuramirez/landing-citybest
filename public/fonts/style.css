@@ -1,0 +1,7 @@
+@font-face {
+    font-family: 'SantanderFont';
+    src: url('SantanderMicroTextW05-Rg.woff2');
+    src: url('SantanderMicroTextW05-Rg.woff2') format('embedded-opentype'), url('SantanderMicroTextW05-Rg.woff2') format('woff2'), url('SantanderMicroTextW05-Rg.woff2') format('woff');
+    font-weight: 900;
+    font-style: normal;
+}

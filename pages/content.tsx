@@ -16,12 +16,17 @@ export default function Content() {
       <Header2 />
       <Header />
       <HomeCarousel />
-      <MainPromotionalBanner includeFlags />
-
+      <BannerGeneric img="FOTO26.svg"
+       goto='/conductores'
+      />
+      {/*<MainPromotionalBanner includeFlags />*/}
       <FeaturesSection />
       <AvailabilitySection />
       <VehiclesTypesSection />
-      <BannerGeneric />
+      <BannerGeneric 
+      img="DRIVERUSUARIO.svg"
+      goto={null}
+      />
       <FooterDownloadSection />
       <Footer />
     </div>
@@ -197,10 +202,20 @@ function FooterDownloadSection() {
   );
 }
 
-function BannerGeneric() {
+function BannerGeneric({
+  img,
+  goto
+}) {
   return (
-    <div style={{ position: "relative",marginBottom:'1.5rem', border:'none' }}>
-      <img src="img/DRIVERUSUARIO.svg" style={{ width: "100%" }} alt="" />
+    <div style={{ position: "relative",marginBottom:'1.5rem', border:'none', cursor:goto!=null&&'pointer' }}>
+     <img onClick={
+        (e)=>{
+          e.preventDefault();
+          if(goto!=null){
+            window.location.href=goto;
+          }
+        }
+     } src={`img/${img}`} style={{ width: "100%" }} alt="" />
     </div>
   );
 }

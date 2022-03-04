@@ -42,6 +42,7 @@ export default function HomeCarousel() {
           className="main-header-carousel"
           autoPlay
           infiniteLoop
+          interval={3000}
         >
 
           <Slide
@@ -58,7 +59,7 @@ export default function HomeCarousel() {
             id='slide-01'
             backgroundImage={
               <img
-                src={`${"/img/home/FOTO22.svg"
+                src={`${"/img/home/FOTO23.svg"
                   }`}
               />
             }
@@ -68,7 +69,7 @@ export default function HomeCarousel() {
             id='slide-01'
             backgroundImage={
               <img
-                src={`${"/img/home/slide-01.svg"
+                src={`${"/img/home/FOTO24.svg"
                   }`}
               />
             }

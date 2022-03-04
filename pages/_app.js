@@ -16,6 +16,7 @@ function MyApp({ Component, pageProps }) {
           href="https://fonts.googleapis.com/css2?family=Overpass:wght@100;300;600;700;900&display=swap"
           rel="stylesheet"
         />
+        <link href="/fonts/style.css" rel="stylesheet"/>
         <link rel="shortcut icon" href="imag/favicon.svg" type="image/x-icon" />
         <script src="https://unpkg.com/jarallax@1/dist/jarallax.min.js"></script>
 
