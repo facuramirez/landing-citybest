@@ -15,9 +15,11 @@ export default function Content() {
       <Header />
       <HomeCarousel />
       <MainPromotionalBanner includeFlags />
+
       <FeaturesSection />
       <AvailabilitySection />
       <VehiclesTypesSection />
+      <BannerGeneric />
       <FooterDownloadSection />
       <Footer />
     </div>
@@ -31,21 +33,21 @@ function FeaturesSection() {
         <div className="row">
           <div className="col-12 col-md-4">
             <FeatureItem
-              icon={<img  src="img/TELEFONO1.png" alt="" />}
+              icon={<img style={{maxWidth:'250px'}}  src="img/AUTO1.png" alt="" />}
               title={<FeatureTitle title="Electromovilidad" />}
               description="Viaja con CityBest, contamos con vehículos 100% ecológicos y juntos marquemos la diferencia."
             />
           </div>
           <div className="col-12 col-md-4">
             <FeatureItem
-              icon={<img src="img/TELEFONO1.png" alt="" />}
+              icon={<img style={{maxWidth:'250px'}} src="img/AUTOCIUDAD1.png" alt="" />}
               title={<FeatureTitle title="Viaja sin preocupaciones" />}
               description="Citybest se diseñó con la seguridad como eje central. Con las funciones de prevención de incidentes, cobertura de seguro y tecnología que te mantiene conectado, nos enfocamos en que sientas tranquilidad al trasladarte"
             />
           </div>
           <div className="col-12 col-md-4">
             <FeatureItem
-              icon={<img  src="img/TELEFONO1.png" alt="" />}
+              icon={<img style={{maxWidth:'250px'}}  src="img/TELEFONOAUTO1.png" alt="" />}
               title={<FeatureTitle title="Realiza envíos" />}
               description="Una forma de enviar y recibir objetos desde nuestra aplicación de manera segura con la que, además, ayudamos a los conductores que encuentran en Citybest una fuente de ingresos indispensable."
             />
@@ -112,34 +114,17 @@ function AvailabilitySection() {
                     <img src="img/whatsapp.png" />
                   </div>
                 </div>
-                {/*  <div className="trip">
-                  <div className="point origin">
-                    <i className="fa fa-circle"></i>
-                  </div>
-                  <div className="line"></div>
-                  <div className="point target">
-                    <i className="fa fa-map-marker"></i>
-                  </div>
-                </div> */}
+               
               </div>
             </div>
           </div>
           <div className="col-12 col-md-6 col-lg-4 position-relative">
-            <div className="avail-phone-img d-none d-md-block">
-              <img src="img/phone.png" alt="" />
+            <div className="avail-phone-img d-none d-md-block mt-3">
+              <img src="img/CELULAR.png" alt="" />
             </div>
           </div>
         </div>
 
-        {/*  <iframe
-          width="100%"
-          height="500"
-          src="https://www.youtube.com/embed/vt4IYKICDIQ?autoplay=1"
-          title="YouTube video player"
-          frameBorder="0"
-          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-          allowFullScreen
-        ></iframe> */}
       </div>
     </section>
   );
@@ -153,7 +138,7 @@ function VehiclesTypesSection() {
           <div className="col-12 col-md-4">
             <FeatureItem
               icon={
-                  <img style={{maxWidth:'250px'}} src="img/AUTO1.png" />
+                <img style={{maxWidth:'150px'}} src="img/TELEFONO1.png" />
               }
               title="Vehículos eléctricos"
               description="El costo por kilómetro de los automóviles eléctricos es sustancialmente inferior al de los automóviles de motor de combustión. Es por eso, que todos tus viajes con Citybest serán los más económicos del mercado"
@@ -162,7 +147,7 @@ function VehiclesTypesSection() {
           <div className="col-12 col-md-4">
             <FeatureItem
               icon={
-                  <img style={{maxWidth:'250px'}} src="img/AUTOCIUDAD1.png" />
+                <img style={{maxWidth:'150px'}} src="img/TELEFONO1.png" />
               }
               title="Vehículos a gas"
               description="El rendimiento de un auto a gas en velocidad y potencia es similar, y en muchos casos hasta mejor, que el de uno a gasolina. Es por eso, que todos tus viajes con Citybest serán los más económicos del mercado"
@@ -171,7 +156,7 @@ function VehiclesTypesSection() {
           <div className="col-12 col-md-4">
             <FeatureItem
               icon={
-                  <img style={{maxWidth:'250px'}} src="img/TELEFONOAUTO1.png" />
+                  <img style={{maxWidth:'150px'}} src="img/TELEFONO1.png" />
               }
               title="Impacto"
               description="En Citybest contribuimos a disminuir la presencia de gases contaminantes en la atmósfera, principalmente el dióxido de carbono (CO2), monóxido de carbono (CO), entre otros."
@@ -203,9 +188,17 @@ function FooterDownloadSection() {
             className="download-icon mr-3"
             alt=""
           />
-          <img src="img/apple.png" className="download-icon mr-2" alt="" />
+          <img src="img/apple.png" className="download-icon mr-2 " alt="" />
         </div>
       </div>
+    </div>
+  );
+}
+
+function BannerGeneric() {
+  return (
+    <div style={{ position: "relative",marginBottom:'1.5rem', border:'none' }}>
+      <img src="img/5555.jpg" style={{ width: "100%" }} alt="" />
     </div>
   );
 }

@@ -1,26 +1,57 @@
+import { useEffect, useState } from "react";
 import { Nav, Navbar } from "react-bootstrap";
-
-const syleNavLink = {
-    display: 'block',
-    color: '#fff',
-    textDecoration: 'none',
-    transition: 'all .3s ease-in-out',
-    boxSizing:' border-box',
-    fonWeight: 600,
-}
+import { isMobile } from "react-device-detect";
 
 export default function Header({ activeItem = "" }) {
+
+  const [styleNavbar, setstyleNavbar] = useState({})
+
+  useEffect(() => {
+    if (isMobile) {
+      setstyleNavbar({
+        top:0,
+        left:0,
+      })
+    } else {
+      setstyleNavbar({
+          zIndex:3,
+          position: "absolute",
+          marginTop:'1.5rem',
+          top: 0,
+          display: 'flex',
+          alignItems: 'center',
+          flexDirection: 'row',
+          justifyContent: 'space-between',
+          minWidth: '100%',
+      })
+    }
+    return() => {
+      setstyleNavbar(  {})
+    }
+  }, [isMobile]);
+
   return (
-    <Navbar expand="lg" className="main-navigation">
+    <div>
+      <Navbar  style={styleNavbar} expand="md" className="main-navigation">
       <Navbar.Brand href="/">
-        <img src="./img/logo.svg" />
+       <div className="col-8">
+       <img src="./img/logo.svg" />
+       <img style={{
+         marginLeft: "15px",
+       }} src="./img/redpacto.png" className="logo-redpacto" />
+       </div>
+
       </Navbar.Brand>
       <Navbar.Toggle aria-controls="basic-navbar-nav" />
       <Navbar.Collapse
         id="basic-navbar-nav"
-        className="mr-auto mr-md-0 main-menu justify-content-md-end"
+        className="mr-auto mr-md-0 ml-0 main-menu justify-content-md-end"
       >
-        <Nav className="">
+        <Nav  className="me-auto"
+        navbar
+          fill
+          activeKey={activeItem} 
+        >
           {menuItems.map((e) => (
             <Nav.Link
               key={e.key}
@@ -35,6 +66,7 @@ export default function Header({ activeItem = "" }) {
         </Nav>
       </Navbar.Collapse>
     </Navbar>
+    </div>
   );
 }
 

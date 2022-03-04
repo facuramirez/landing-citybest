@@ -174,13 +174,13 @@ section {
 }
 
 .main-navigation {
-  padding-left: 15%;
+  padding-left:10%;
   padding-right: 15%;
   background-color: $primary-color;
   color: white;
   .main-menu {
     .nav-link {
-      padding: 1em 1.3em 0;
+      margin-top: 1em;
       .label {
         margin: 0;
         padding-bottom: 1em;

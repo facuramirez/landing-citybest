@@ -29,7 +29,7 @@ export default function Footer() {
               </div>
 
               <small className="mb-2 footer-policy">
-                © 2021 Citybest Todos los derechos reservados. <br />
+                © {new Date().getFullYear()} Citybest Todos los derechos reservados. <br />
               </small>
 
               <small className="footer-countries">
