@@ -1,13 +1,7 @@
 import { useEffect, useState } from "react";
-import { useResponsive } from "react-hooks-responsive";
 import { Carousel } from "react-responsive-carousel";
 import "react-responsive-carousel/lib/styles/carousel.min.css"; // requires a loader
-import Header from "../Header";
-const urlLandingCarousel = ["slide-01.svg", "slide-02.svg", "slide-03.svg"];
-import { BrowserView, MobileView, isBrowser, isMobile } from 'react-device-detect';
-import MainPromotionalBanner from "../MainPromotionalBanner";
-
-
+import { isMobile } from 'react-device-detect';
 
 export default function HomeCarousel() {
   const Slide = ({ id, backgroundImage }) => {
@@ -21,22 +15,22 @@ export default function HomeCarousel() {
     );
   };
 
-    const [stylesmobile, setstylesmobile] = useState({
-    })
-    
-       useEffect(() => {
-          if (isMobile) {
-            setstylesmobile({})
-          } else {
-            setstylesmobile({
-              top: 0,
-            })
-            
-          }
-          return() => {
-            setstylesmobile(  {})
-          }
-        }, [isMobile]);
+  const [stylesmobile, setstylesmobile] = useState({
+  })
+
+  useEffect(() => {
+    if (isMobile) {
+      setstylesmobile({})
+    } else {
+      setstylesmobile({
+        top: 0,
+      })
+
+    }
+    return () => {
+      setstylesmobile({})
+    }
+  }, [isMobile]);
 
   return (
     <div  >
@@ -46,49 +40,46 @@ export default function HomeCarousel() {
           showStatus={false}
           showThumbs={false}
           className="main-header-carousel"
-          autoPlay={false}
+          autoPlay
           infiniteLoop
         >
 
-        <Slide
+          <Slide
             id='slide-01'
             backgroundImage={
               <img
-                src={`${
-                  "/img/home/slide-01.svg"
-                }`}
+                src={`${"/img/home/FOTO11.svg"
+                  }`}
               />
             }
           />
 
-<Slide
+          <Slide
             id='slide-01'
             backgroundImage={
               <img
-                src={`${
-                  "/img/home/slide-01.svg"
-                }`}
+                src={`${"/img/home/FOTO22.svg"
+                  }`}
               />
             }
           />
 
-      <Slide
+          <Slide
             id='slide-01'
             backgroundImage={
               <img
-                src={`${
-                  "/img/home/slide-01.svg"
-                }`}
+                src={`${"/img/home/slide-01.svg"
+                  }`}
               />
             }
           />
 
-         
+
         </Carousel>
-        
+
       </div>
 
-      
+
 
     </div>
   );

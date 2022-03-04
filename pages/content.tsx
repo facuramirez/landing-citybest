@@ -2,6 +2,7 @@
 import React from "react";
 import Footer from "../components/Footer";
 import Header from "../components/Header";
+import Header2 from "../components/Header/Header2";
 import HomeCarousel from "../components/HomeCarousel";
 import MainPromotionalBanner from "../components/MainPromotionalBanner";
 
@@ -12,6 +13,7 @@ export default function Content() {
 
   return (
     <div className="page">
+      <Header2 />
       <Header />
       <HomeCarousel />
       <MainPromotionalBanner includeFlags />
@@ -198,7 +200,7 @@ function FooterDownloadSection() {
 function BannerGeneric() {
   return (
     <div style={{ position: "relative",marginBottom:'1.5rem', border:'none' }}>
-      <img src="img/5555.jpg" style={{ width: "100%" }} alt="" />
+      <img src="img/DRIVERUSUARIO.svg" style={{ width: "100%" }} alt="" />
     </div>
   );
 }
