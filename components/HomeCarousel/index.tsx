@@ -36,6 +36,7 @@ export default function HomeCarousel() {
     <div  >
 
       <div style={stylesmobile} className="d-block d-xl-block">
+        
         <Carousel
           showStatus={false}
           showThumbs={false}

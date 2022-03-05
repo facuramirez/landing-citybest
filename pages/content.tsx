@@ -1,5 +1,6 @@
 /* global jarallax */
 import React from "react";
+import { isMobile } from "react-device-detect";
 import Footer from "../components/Footer";
 import Header from "../components/Header";
 import Header2 from "../components/Header/Header2";
@@ -13,19 +14,19 @@ export default function Content() {
 
   return (
     <div className="page">
-      <Header2 />
+      {!isMobile && <Header2 />}
       <Header />
       <HomeCarousel />
       <BannerGeneric img="FOTO26.svg"
-       goto='/conductores'
+        goto='/conductores'
       />
       {/*<MainPromotionalBanner includeFlags />*/}
       <FeaturesSection />
       <AvailabilitySection />
       <VehiclesTypesSection />
-      <BannerGeneric 
-      img="DRIVERUSUARIO.svg"
-      goto={null}
+      <BannerGeneric
+        img="DRIVERUSUARIO.svg"
+        goto={null}
       />
       <FooterDownloadSection />
       <Footer />
@@ -40,21 +41,21 @@ function FeaturesSection() {
         <div className="row">
           <div className="col-12 col-md-4">
             <FeatureItem
-              icon={<img style={{maxWidth:'250px'}}  src="img/AUTO1.png" alt="" />}
+              icon={<img style={{ maxWidth: '250px' }} src="img/AUTO1.png" alt="" />}
               title={<FeatureTitle title="Electromovilidad" />}
               description="Viaja con CityBest, contamos con vehículos 100% ecológicos y juntos marquemos la diferencia."
             />
           </div>
           <div className="col-12 col-md-4">
             <FeatureItem
-              icon={<img style={{maxWidth:'250px'}} src="img/AUTOCIUDAD1.png" alt="" />}
+              icon={<img style={{ maxWidth: '250px' }} src="img/AUTOCIUDAD1.png" alt="" />}
               title={<FeatureTitle title="Viaja sin preocupaciones" />}
               description="Citybest se diseñó con la seguridad como eje central. Con las funciones de prevención de incidentes, cobertura de seguro y tecnología que te mantiene conectado, nos enfocamos en que sientas tranquilidad al trasladarte"
             />
           </div>
           <div className="col-12 col-md-4">
             <FeatureItem
-              icon={<img style={{maxWidth:'250px'}}  src="img/TELEFONOAUTO1.png" alt="" />}
+              icon={<img style={{ maxWidth: '250px' }} src="img/TELEFONOAUTO1.png" alt="" />}
               title={<FeatureTitle title="Realiza envíos" />}
               description="Una forma de enviar y recibir objetos desde nuestra aplicación de manera segura con la que, además, ayudamos a los conductores que encuentran en Citybest una fuente de ingresos indispensable."
             />
@@ -121,7 +122,7 @@ function AvailabilitySection() {
                     <img src="img/whatsapp.png" />
                   </div>
                 </div>
-               
+
               </div>
             </div>
           </div>
@@ -145,7 +146,7 @@ function VehiclesTypesSection() {
           <div className="col-12 col-md-4">
             <FeatureItem
               icon={
-                <img style={{maxWidth:'150px'}} src="img/TELEFONO1.png" />
+                <img style={{ maxWidth: '150px' }} src="img/TELEFONO1.png" />
               }
               title="Vehículos eléctricos"
               description="El costo por kilómetro de los automóviles eléctricos es sustancialmente inferior al de los automóviles de motor de combustión. Es por eso, que todos tus viajes con Citybest serán los más económicos del mercado"
@@ -154,7 +155,7 @@ function VehiclesTypesSection() {
           <div className="col-12 col-md-4">
             <FeatureItem
               icon={
-                <img style={{maxWidth:'150px'}} src="img/TELEFONO1.png" />
+                <img style={{ maxWidth: '150px' }} src="img/TELEFONO1.png" />
               }
               title="Vehículos a gas"
               description="El rendimiento de un auto a gas en velocidad y potencia es similar, y en muchos casos hasta mejor, que el de uno a gasolina. Es por eso, que todos tus viajes con Citybest serán los más económicos del mercado"
@@ -163,7 +164,7 @@ function VehiclesTypesSection() {
           <div className="col-12 col-md-4">
             <FeatureItem
               icon={
-                  <img style={{maxWidth:'150px'}} src="img/TELEFONO1.png" />
+                <img style={{ maxWidth: '150px' }} src="img/TELEFONO1.png" />
               }
               title="Impacto"
               description="En Citybest contribuimos a disminuir la presencia de gases contaminantes en la atmósfera, principalmente el dióxido de carbono (CO2), monóxido de carbono (CO), entre otros."
@@ -207,15 +208,15 @@ function BannerGeneric({
   goto
 }) {
   return (
-    <div style={{ position: "relative",marginBottom:'1.5rem', border:'none', cursor:goto!=null&&'pointer' }}>
-     <img onClick={
-        (e)=>{
+    <div style={{ position: "relative", marginBottom: '1.5rem', border: 'none', cursor: goto != null && 'pointer' }}>
+      <img onClick={
+        (e) => {
           e.preventDefault();
-          if(goto!=null){
-            window.location.href=goto;
+          if (goto != null) {
+            window.location.href = goto;
           }
         }
-     } src={`img/${img}`} style={{ width: "100%" }} alt="" />
+      } src={`img/${img}`} style={{ width: "100%" }} alt="" />
     </div>
   );
 }

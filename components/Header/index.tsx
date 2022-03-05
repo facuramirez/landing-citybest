@@ -19,19 +19,21 @@ export default function Header({ activeItem = "" }) {
         minWidth: '100%',
         opacity: 0.6,
       })
-    }else{
-      setstyleNavbar({
-        zIndex: 3,
-        position: 'absolute',
-        top: 0,
-        display: 'flex',
-        alignItems: 'center',
-        flexDirection: 'row',
-        justifyContent: 'space-between',
-        minWidth: '100%',
-        opacity: 0.6,
-        marginTop: '3.3rem',
-      })
+    } else {
+      if (!isMobile) {
+        setstyleNavbar({
+          zIndex: 3,
+          position: 'absolute',
+          top: 0,
+          display: 'flex',
+          alignItems: 'center',
+          flexDirection: 'row',
+          justifyContent: 'space-between',
+          minWidth: '100%',
+          opacity: 0.6,
+          marginTop: '3.3rem',
+        })
+      }
     }
   };
 
@@ -79,27 +81,28 @@ export default function Header({ activeItem = "" }) {
         <Navbar.Brand href="/">
           <div className="col-8">
             <img src="./img/logocitibest.png" />
-            <span style={{
-              borderLeft: '3px solid white',
-              height: '80px',
-              marginLeft: '1rem',
-              fontSize: '2.2rem',
+            {!isMobile && <>
+              <span style={{
+                borderLeft: '3px solid white',
+                height: '80px',
+                marginLeft: '1rem',
+                fontSize: '2.2rem',
 
-            }}></span>
+              }}></span>
 
-            <span style={{
-              marginLeft: '1rem',
-              fontSize: '0.8rem',
-              fontWeight: 'bold',
-              color: '#fff',
-            }}>
-              Support
-            </span>
+              <span style={{
+                marginLeft: '1rem',
+                fontSize: '0.8rem',
+                fontWeight: 'bold',
+                color: '#fff',
+              }}>
+                Support
+              </span>
 
-            <img style={{
-              marginLeft: "15px",
-              maxWidth: '25%'
-            }} src="./img/logo_pacto_global.png" className="logo-redpacto" />
+              <img style={{
+                marginLeft: "15px",
+                maxWidth: '25%'
+              }} src="./img/logo_pacto_global.png" className="logo-redpacto" /></>}
           </div>
 
         </Navbar.Brand>
