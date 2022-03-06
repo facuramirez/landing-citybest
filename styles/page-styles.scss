@@ -724,9 +724,10 @@ section {
 }
 
 // Small devices (landscape phones, 576px and up)
-@media (min-width: 576px) {
+@media (min-width: 360px) {
   .main-navigation {
     font-size: 20px !important;
+    padding-right: 8% !important;
   }
 }
 
@@ -734,6 +735,7 @@ section {
 @media (min-width: 768px) {
   .main-navigation {
     font-size: inherit !important;
+    
   }
 
   .carousel .thumbs {

@@ -1,11 +1,30 @@
 import { useEffect, useState } from "react";
 import { Nav, Navbar, OverlayTrigger, Popover, PopoverContent } from "react-bootstrap";
 import { isMobile } from "react-device-detect";
-import Button from "../Button";
+import { PaisesAutorizados } from "../../utils/utils";
 
-export default function Header2({ activeItem = "" }) {
+interface HeaderProps {
+  activeItem?: string;
+  country?: Object;
+  setcountry?: Function;
+}
+
+
+export default function Header2({ activeItem = "", country, setcountry }: HeaderProps) {
 
   const [styleNavbar, setstyleNavbar] = useState({})
+  const [countrySelected, setcountrySelected] = useState(null);
+
+  useEffect(() => {
+    PaisesAutorizados.forEach(pais => {
+      if (pais.nombre === country) {
+        setcountrySelected({
+          nombre: pais.nombre,
+          img: pais.img
+        })
+      }
+    });
+  }, [country]);
 
   useEffect(() => {
     if (isMobile) {
@@ -49,12 +68,12 @@ export default function Header2({ activeItem = "" }) {
                   e.label == "PAISES" ? (<Popover id="popover-basic"
                   >
                     <PopoverContent>
-                      <ListCountrys />
+                      <ListCountrys setcountry={setcountry} />
                     </PopoverContent>
                   </Popover>) : <Popover style={{ display: 'none' }} id="popover-basic"
                   >
                     <PopoverContent>
-                      <ListCountrys />
+                      <ListCountrys setcountry={setcountry} />
                     </PopoverContent>
                   </Popover>}
               >
@@ -64,8 +83,12 @@ export default function Header2({ activeItem = "" }) {
                   active={e.key === activeItem}
                   target={e.key === "ayuda-conductor" && "_blank"}
                 >
-                  <NavIcon icon={e.icon} />
-                  <p className="linknavs2">{e.label}</p>
+                  <NavIcon icon={
+                    e.label === "PAISES" && countrySelected ? countrySelected.img : e.icon
+                  } />
+                  <p className="linknavs2">{
+                    e.label === "PAISES" && countrySelected ? countrySelected.nombre : e.label
+                  }</p>
                 </Nav.Link>
               </OverlayTrigger>
 
@@ -113,11 +136,18 @@ const menuItems = [
 
 
 
-const ListCountrys = () => {
+const ListCountrys = ({
+  setcountry
+}) => {
   return (
 
-    <div className="container">
-      <div className="row">
+    <div className="container" >
+      <div className="row" style={{
+        cursor: 'pointer',
+        marginBottom: '5px',
+        border: '1px solid #ccc',
+      }}
+        onClick={() => setcountry('Mexico')}>
         <div className="col">
           <img style={{
             width: '10%'
@@ -127,12 +157,18 @@ const ListCountrys = () => {
             fontWeight: 'bold',
             fontFamily: 'SantanderFont',
             marginLeft: 10
-          }}>MEXICO</span>
+          }}>Mexico</span>
         </div>
       </div>
 
 
-      <div className="row">
+      <div className="row" style={{
+        cursor: 'pointer',
+        marginBottom: '5px',
+        border: '1px solid #ccc',
+      }}
+        onClick={() => setcountry('Colombia')}>
+
         <div className="col">
           <img style={{
             width: '10%'
@@ -142,13 +178,18 @@ const ListCountrys = () => {
             fontWeight: 'bold',
             fontFamily: 'SantanderFont',
             marginLeft: 10
-          }}>COLOMBIA</span>
+          }}>Colombia</span>
         </div>
       </div>
 
 
 
-      <div className="row">
+      <div className="row" style={{
+        cursor: 'pointer',
+        marginBottom: '5px',
+        border: '1px solid #ccc',
+      }}
+        onClick={() => setcountry('Peru')}>
         <div className="col">
           <img style={{
             width: '10%'
@@ -158,13 +199,20 @@ const ListCountrys = () => {
             fontWeight: 'bold',
             fontFamily: 'SantanderFont',
             marginLeft: 10
-          }}>PERU</span>
+          }}>Peru</span>
         </div>
       </div>
 
 
 
-      <div className="row">
+      <div className="row"
+        style={{
+          cursor: 'pointer',
+          marginBottom: '5px',
+          border: '1px solid #ccc',
+
+        }}
+        onClick={() => setcountry('Chile')}>
         <div className="col">
           <img style={{
             width: '10%'
@@ -174,7 +222,7 @@ const ListCountrys = () => {
             fontWeight: 'bold',
             fontFamily: 'SantanderFont',
             marginLeft: 10
-          }}>CHILE</span>
+          }}>Chile</span>
         </div>
       </div>
     </div>

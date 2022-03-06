@@ -66,7 +66,6 @@ export default function Header({ activeItem = "" }) {
       })
     }
 
-    console.log("win", window.scrollTo(0, 0))
     return () => {
       setstyleNavbar({})
     }
@@ -78,40 +77,56 @@ export default function Header({ activeItem = "" }) {
   return (
     <div>
       <Navbar style={styleNavbar} expand="md" className="main-navigation">
-        <Navbar.Brand href="/">
-          <div className="col-8">
-            <img src="./img/logocitibest.png" />
-            {!isMobile && <>
-              <span style={{
-                borderLeft: '3px solid white',
-                height: '80px',
-                marginLeft: '1rem',
-                fontSize: '2.2rem',
+        <div className="row">
+          <div className={isMobile?"col":"col-8"}>
+            <Navbar.Brand href="/">
+              <div className="col">
+                <img src="./img/logocitibest.png" />
+               
+                  <span style={{
+                    borderLeft: '2px solid white',
+                    height: '80px',
+                    marginLeft: '1rem',
+                    fontSize: '2.2rem',
 
-              }}></span>
+                  }}></span>
 
-              <span style={{
-                marginLeft: '1rem',
-                fontSize: '0.8rem',
-                fontWeight: 'bold',
-                color: '#fff',
-              }}>
-                Support
-              </span>
+                  <span style={{
+                    marginLeft: '1rem',
+                    fontSize: '0.8rem',
+                    fontWeight: 'bold',
+                    color: '#fff',
+                  }}>
+                    Support
+                  </span>
 
-              <img style={{
-                marginLeft: "15px",
-                maxWidth: '25%'
-              }} src="./img/logo_pacto_global.png" className="logo-redpacto" /></>}
+                  <img style={{
+                    marginLeft: "15px",
+                    maxWidth: isMobile ?'15%':'28%',
+                  }} src="./img/logo_pacto_global.png" className="logo-redpacto" />
+              </div>
+
+            </Navbar.Brand>
+
+
           </div>
 
-        </Navbar.Brand>
-        <Navbar.Toggle aria-controls="basic-navbar-nav" />
+          {isMobile && (<div style={{
+            padding: '0.9rem',
+          }} className="col">
+            <Navbar.Toggle aria-controls="basic-navbar-nav" />
+          </div>)}
+
+        </div>
+
+
         <Navbar.Collapse
           id="basic-navbar-nav"
           className="mr-auto mr-md-0 ml-0 main-menu justify-content-md-end"
         >
-          <Nav className="me-auto"
+          <Nav style={{
+            paddingLeft: '80px'
+          }} className="me-auto"
             navbar
             fill
             activeKey={activeItem}

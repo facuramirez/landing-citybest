@@ -1,20 +1,31 @@
 /* global jarallax */
-import React from "react";
+import React, { useState } from "react";
 import { isMobile } from "react-device-detect";
 import Footer from "../components/Footer";
 import Header from "../components/Header";
 import Header2 from "../components/Header/Header2";
 import HomeCarousel from "../components/HomeCarousel";
 import MainPromotionalBanner from "../components/MainPromotionalBanner";
+import { geoFindMe } from "../utils/utils";
 
 export default function Content() {
   if (typeof window === "undefined") {
     return null;
   }
+  
+  const [country, setcountry] = useState(null);
+  
+  React.useEffect(() => {
+    if(!isMobile){
+      geoFindMe((result)=>{
+        setcountry(result.country_name)
+      });
+    }
+  }, []);
 
   return (
     <div className="page">
-      {!isMobile && <Header2 />}
+      {!isMobile && <Header2 country={country} setcountry={setcountry}/>}
       <Header />
       <HomeCarousel />
       <BannerGeneric img="FOTO26.svg"
@@ -28,7 +39,15 @@ export default function Content() {
         img="DRIVERUSUARIO.svg"
         goto={null}
       />
-      <FooterDownloadSection />
+      <BannerGeneric
+        img="MARCASCITY-3.svg"
+        goto={null}
+      />
+      <BannerGeneric
+        img="playstore-appstore.svg"
+        goto='https://play.google.com/store/apps/details?id=py.citybest.citybestpasajero&hl=es_CO&gl=US'
+      />
+
       <Footer />
     </div>
   );
@@ -212,7 +231,10 @@ function BannerGeneric({
       <img onClick={
         (e) => {
           e.preventDefault();
-          if (goto != null) {
+
+          if (goto != null && goto.includes('https')) {
+            window.open(goto, '_blank');
+          } else if (goto != null && !goto.includes('https')) {
             window.location.href = goto;
           }
         }
