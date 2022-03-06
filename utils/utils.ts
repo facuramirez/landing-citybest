@@ -7,7 +7,6 @@ function reverseGeocodingWithGoogle() {
     fetch(`https://ipapi.co/json/`)
       .then((res) => res.json())
       .then((response) => {
-        console.log("🚀 ~ file: utils.ts ~ line 10 ~ .then ~ response", response)
         resolve(response);
       })
       .catch((status) => {

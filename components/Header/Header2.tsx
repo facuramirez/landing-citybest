@@ -54,10 +54,13 @@ export default function Header2({ activeItem = "", country, setcountry }: Header
   return (
     <div>
       <Navbar style={styleNavbar} expand="md" className="main-navigation2">
+
         <Navbar.Collapse
           id="basic-navbar-nav"
-          className="mr-auto mr-md-0 ml-0 main-menu justify-content-md-end"
+          className="mr-auto mr-md-1 ml-4 main-menu justify-content-md-end"
         >
+          <Partners />
+
           <Nav className="me-auto"
             navbar
             fill
@@ -74,16 +77,16 @@ export default function Header2({ activeItem = "", country, setcountry }: Header
                   >
                     <PopoverContent>
                       <ListCountrys
-                       setcountry={setcountry}
-                       setvisibleTrigger={setvisibleTrigger}
-                       visibleTrigger={visibleTrigger} />
+                        setcountry={setcountry}
+                        setvisibleTrigger={setvisibleTrigger}
+                        visibleTrigger={visibleTrigger} />
                     </PopoverContent>
                   </Popover>) : <Popover style={{ display: 'none' }} id="popover-basic"
                   >
                     <PopoverContent>
-                      <ListCountrys   setcountry={setcountry}
-                       setvisibleTrigger={setvisibleTrigger}
-                       visibleTrigger={visibleTrigger} />
+                      <ListCountrys setcountry={setcountry}
+                        setvisibleTrigger={setvisibleTrigger}
+                        visibleTrigger={visibleTrigger} />
                     </PopoverContent>
                   </Popover>}
               >
@@ -152,7 +155,7 @@ const ListCountrys = ({
   visibleTrigger
 }) => {
 
-  const HideAndShowCountry = (country:string)=>{
+  const HideAndShowCountry = (country: string) => {
     setcountry(country)
     setvisibleTrigger(!visibleTrigger)
   }
@@ -244,6 +247,78 @@ const ListCountrys = ({
       </div>
     </div>
 
+
+  )
+}
+
+
+
+const Partners = () => {
+  return (
+
+    <div style={{
+      maxWidth: '60%'
+    }} >
+      <img style={{
+        width: '2%',
+        paddingLeft: 4,
+        marginRight: 4,
+      }} src="img/partners/flecha.png" className="img-fluid" />
+      <span style={{
+        paddingRight: 20
+      }}>Paga con
+        <img
+          onClick={() => window.open('https://www.mercadopago.cl/', '_blank')}
+          style={{
+            width: '15%',
+            paddingLeft: 4,
+            marginRight: 4,
+            marginLeft: 4,
+            cursor: 'pointer',
+          }} src="img/partners/MERCADOPAGO.png" className="img-fluid" />
+      </span>
+
+      <img style={{
+        width: '2%',
+        paddingLeft: 4,
+        marginRight: 4
+      }} src="img/partners/honorcell.png" className="img-fluid" />
+      <span>Smartphone{""}
+        <img
+          onClick={() => {
+            window.open('https://www.hihonor.com/cl/', '_blank')
+          }}
+          style={{
+            width: '10%',
+            paddingLeft: 4,
+            marginRight: 4,
+            cursor: 'pointer',
+          }} src="img/partners/honor_logo.png" className="img-fluid" />
+      </span>
+
+
+      <img style={{
+        width: '2%',
+        paddingLeft: 4,
+        marginRight: 4,
+      }} src="img/partners/flecha.png" className="img-fluid" />
+      <span style={{
+        paddingRight: 20
+      }}>Vehículo eléctrico {" "}
+        <img
+          onClick={() => {
+            window.open('https://jac.mx/?keyword=jac%20sunray%20precio&creative=499627464601&gclid=CjwKCAiAjoeRBhAJEiwAYY3nDGp6zLgUeybju4UNCmEbFdfBO1JaJRkAEvCjzY4FZs5eB556XdEA6RoCNn4QAvD_BwE', '_blank')
+          }} style={{
+            width: '8%',
+            paddingLeft: 4,
+            marginRight: 4,
+            marginLeft: 4,
+            cursor: 'pointer',
+          }} src="img/partners/jaclogo.png" className="img-fluid" />
+      </span>
+
+
+    </div>
 
   )
 }
