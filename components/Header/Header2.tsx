@@ -14,6 +14,7 @@ export default function Header2({ activeItem = "", country, setcountry }: Header
 
   const [styleNavbar, setstyleNavbar] = useState({})
   const [countrySelected, setcountrySelected] = useState(null);
+  const [visibleTrigger, setvisibleTrigger] = useState(false)
 
   useEffect(() => {
     PaisesAutorizados.forEach(pais => {
@@ -63,17 +64,26 @@ export default function Header2({ activeItem = "", country, setcountry }: Header
             activeKey={activeItem}
           >
             {menuItems.map((e) => (
-              <OverlayTrigger trigger="click" placement="bottom"
+              <OverlayTrigger
+                show={visibleTrigger}
+                onToggle={() => setvisibleTrigger(!visibleTrigger)}
+                trigger="click" placement="bottom-start"
                 overlay={
-                  e.label == "PAISES" ? (<Popover id="popover-basic"
+                  e.label == "PAISES" ? (<Popover
+                    id="popover-basic"
                   >
                     <PopoverContent>
-                      <ListCountrys setcountry={setcountry} />
+                      <ListCountrys
+                       setcountry={setcountry}
+                       setvisibleTrigger={setvisibleTrigger}
+                       visibleTrigger={visibleTrigger} />
                     </PopoverContent>
                   </Popover>) : <Popover style={{ display: 'none' }} id="popover-basic"
                   >
                     <PopoverContent>
-                      <ListCountrys setcountry={setcountry} />
+                      <ListCountrys   setcountry={setcountry}
+                       setvisibleTrigger={setvisibleTrigger}
+                       visibleTrigger={visibleTrigger} />
                     </PopoverContent>
                   </Popover>}
               >
@@ -137,8 +147,15 @@ const menuItems = [
 
 
 const ListCountrys = ({
-  setcountry
+  setcountry,
+  setvisibleTrigger,
+  visibleTrigger
 }) => {
+
+  const HideAndShowCountry = (country:string)=>{
+    setcountry(country)
+    setvisibleTrigger(!visibleTrigger)
+  }
   return (
 
     <div className="container" >
@@ -147,7 +164,7 @@ const ListCountrys = ({
         marginBottom: '5px',
         border: '1px solid #ccc',
       }}
-        onClick={() => setcountry('Mexico')}>
+        onClick={() => HideAndShowCountry('Mexico')}>
         <div className="col">
           <img style={{
             width: '10%'
@@ -167,7 +184,7 @@ const ListCountrys = ({
         marginBottom: '5px',
         border: '1px solid #ccc',
       }}
-        onClick={() => setcountry('Colombia')}>
+        onClick={() => HideAndShowCountry('Colombia')}>
 
         <div className="col">
           <img style={{
@@ -189,7 +206,7 @@ const ListCountrys = ({
         marginBottom: '5px',
         border: '1px solid #ccc',
       }}
-        onClick={() => setcountry('Peru')}>
+        onClick={() => HideAndShowCountry('Peru')}>
         <div className="col">
           <img style={{
             width: '10%'
@@ -212,7 +229,7 @@ const ListCountrys = ({
           border: '1px solid #ccc',
 
         }}
-        onClick={() => setcountry('Chile')}>
+        onClick={() => HideAndShowCountry('Chile')}>
         <div className="col">
           <img style={{
             width: '10%'
