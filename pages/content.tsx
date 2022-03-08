@@ -4,6 +4,7 @@ import { isMobile } from "react-device-detect";
 import Footer from "../components/Footer";
 import Header from "../components/Header";
 import Header2 from "../components/Header/Header2";
+import HeaderMobile from "../components/Header/HeaderMobile";
 import HomeCarousel from "../components/HomeCarousel";
 import MainPromotionalBanner from "../components/MainPromotionalBanner";
 import { geoFindMe } from "../utils/utils";
@@ -16,16 +17,16 @@ export default function Content() {
   const [country, setcountry] = useState(null);
 
   React.useEffect(() => {
-    if (!isMobile) {
       geoFindMe((result) => {
         setcountry(result.country_name)
       });
-    }
   }, []);
 
   return (
     <div className="page">
-      {!isMobile && <Header2 country={country} setcountry={setcountry} />}
+      {!isMobile ?
+        <Header2 country={country} setcountry={setcountry} />
+        : <HeaderMobile country={country} setcountry={setcountry} />}
       <Header />
       <HomeCarousel />
       <BannerGeneric img="FOTO26.svg"
@@ -248,15 +249,15 @@ const Banner3Columns = () => {
 
   return (
 
-    <div className="row mb-5" >
+    <div style={{
+    }} className={!isMobile && "row mb-5"} >
 
       <div style={{
-        paddingLeft: '0px !important',
+        paddingLeft: 0,
       }} className="col-12 col-md-4 pr-0">
         <img
           style={{
             cursor: "pointer",
-
           }}
           onClick={() => handleClick('https://www.mercadopago.cl/')}
           src="img/FOTO27.svg"
@@ -289,7 +290,7 @@ const Banner3Columns = () => {
             cursor: "pointer"
           }}
           src="img/FOTO29.svg"
-          className="w-80"
+          className={isMobile ? "w-100" : "w-80"}
           alt=""
         />
       </div>
