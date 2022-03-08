@@ -17,9 +17,9 @@ export default function Content() {
   const [country, setcountry] = useState(null);
 
   React.useEffect(() => {
-      geoFindMe((result) => {
-        setcountry(result.country_name)
-      });
+    geoFindMe((result) => {
+      setcountry(result.country_name)
+    });
   }, []);
 
   return (
@@ -41,10 +41,12 @@ export default function Content() {
         goto={null}
       />
       <Banner3Columns />
-      <BannerGeneric
+
+      {isMobile ? <GoogleAppStoresSection /> : <BannerGeneric
         img="playstore-appstore.svg"
         goto='https://play.google.com/store/apps/details?id=py.citybest.citybestpasajero&hl=es_CO&gl=US'
-      />
+      />}
+
 
       <Footer />
     </div>
@@ -297,4 +299,65 @@ const Banner3Columns = () => {
     </div>
 
   )
+}
+
+
+function GoogleAppStoresSection() {
+  return (
+    <section style={{
+      marginTop: '1rem',
+    }} className="banner bg-primary">
+      <div className="container">
+        <div className="row d-flex justify-content-center">
+          <div className="col-12 col-md-6 col-lg-5 mb-3 mb-md-0">
+            <div className="d-flex flex-column  ">
+              <h3 className="text-strong mb-3">
+                <span className="text-secondary">
+                  Descarga la app de Citybest
+                </span>
+              </h3>
+
+
+              <div className="row">
+                <div className="col">
+                  <img onClick={() => {
+                    window.open('https://play.google.com/store/apps/details?id=com.citybest.app', '_blank');
+                  }} style={{
+                    maxWidth: '200px',
+                    marginBottom: '1rem',
+                    alignContent: 'center',
+                    alignItems: 'center',
+                    justifyContent: 'center',
+                    display: 'block',
+                    margin: 'auto'
+
+                  }} src="img/googleplaylogo.png" />
+
+                  <img onClick={() => {
+                    window.open('https://play.google.com/store/apps/details?id=com.citybest.app', '_blank');
+                  }} style={{
+                    marginBottom: '1rem',
+                    alignContent: 'center',
+                    alignItems: 'center',
+                    justifyContent: 'center',
+                    display: 'block',
+                    margin: 'auto',
+                    maxWidth: '220px',
+                  }} src="img/appstorelogo.png" />
+                </div>
+              </div>
+
+
+            </div>
+          </div>
+          <div className="col-12 col-md-6 col-lg-4 position-relative">
+            <div className="avail-phone-img d-none d-md-block mt-3">
+              <img src="img/CELULAR.png" alt="" />
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+  );
 }

@@ -16,7 +16,25 @@ function MyApp({ Component, pageProps }) {
           href="https://fonts.googleapis.com/css2?family=Overpass:wght@100;300;600;700;900&display=swap"
           rel="stylesheet"
         />
-        <link href="/fonts/style.css" rel="stylesheet"/>
+        <link
+          rel="apple-touch-icon"
+          sizes="180x180"
+          href="/img/apple-touch-icon.png"
+        />
+        <link
+          rel="icon"
+          type="image/png"
+          sizes="32x32"
+          href="/img/favicon-32x32.png"
+        />
+        <link
+          rel="icon"
+          type="image/png"
+          sizes="16x16"
+          href="/img/favicon-16x16.png"
+        />
+        <link rel="manifest" href="/site.webmanifest"></link>
+        <link href="/fonts/style.css" rel="stylesheet" />
         <link rel="shortcut icon" href="imag/favicon.svg" type="image/x-icon" />
         <script src="https://unpkg.com/jarallax@1/dist/jarallax.min.js"></script>
 
