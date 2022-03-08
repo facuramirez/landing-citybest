@@ -85,8 +85,8 @@ export default function HeaderMobile({ activeItem = "", country, setcountry }: H
                         }} src={`img/ICONOPAISES.png`} className="nav-icon" />}
                         <span style={{
                             fontSize: "1rem",
-                            fontWeight: "bold",
                             color: "white",
+                            fontWeight: 400,
                             marginLeft: "0.5rem",
                         }}>
                             {countrySelected ? countrySelected.nombre : 'Paises'}
@@ -100,7 +100,7 @@ export default function HeaderMobile({ activeItem = "", country, setcountry }: H
 
                         <span style={{
                             fontSize: "1rem",
-                            fontWeight: "bold",
+                            fontWeight: 400,
                             color: "white",
                             marginLeft: "0.5rem",
                         }}>
