@@ -74,21 +74,15 @@ export default function HeaderMobile({ activeItem = "", country, setcountry }: H
             >
                 <div className="row" style={
                     {
-                        display: 'flex',
-                        alignItems: 'center',
-                        flexDirection: 'row',
-                        justifyContent: 'space-between',
-                        maxWidth: '40%',
-                        opacity: 0.8,
-                        border: '1px solid #fff',
-                        padding: '0.2rem',
-                        borderRadius: '0.5rem',
+
                     }
                 }>
-                    <div className="col">
-                        {countrySelected && <NavIcon icon={
+                    <div className="col-4">
+                        {countrySelected ? <NavIcon icon={
                             countrySelected.img
-                        } />}
+                        } /> : <img style={{
+                            width: '15%'
+                        }} src={`img/ICONOPAISES.png`} className="nav-icon" />}
                         <span style={{
                             fontSize: "1rem",
                             fontWeight: "bold",
@@ -96,6 +90,21 @@ export default function HeaderMobile({ activeItem = "", country, setcountry }: H
                             marginLeft: "0.5rem",
                         }}>
                             {countrySelected ? countrySelected.nombre : 'Paises'}
+                        </span>
+                    </div>
+
+                    <div className="col ml-5" >
+                        <img style={{
+                            width: '10%'
+                        }} src={`img/AYUDAALCONDUCTOR.png`} className="nav-icon" />
+
+                        <span style={{
+                            fontSize: "1rem",
+                            fontWeight: "bold",
+                            color: "white",
+                            marginLeft: "0.5rem",
+                        }}>
+                            Ayuda al conductor
                         </span>
                     </div>
 
@@ -113,31 +122,6 @@ function NavIcon({ icon }) {
         width: '20%'
     }} src={`img/${icon}`} className="nav-icon" />;
 }
-
-
-const menuItems = [
-
-    {
-        key: "ayuda-conductor",
-        label: "AYUDA AL CONDUCTOR",
-        icon: 'AYUDAALCONDUCTOR.png',
-        link:
-            "https://api.whatsapp.com/send?phone=573243222725&text=Necesito%20informaci%C3%B3n",
-    },
-    {
-        key: "help-client",
-        label: "SERVICIO AL CLIENTE",
-        icon: 'ATENCIONALCLIENTE.png',
-        link: "/",
-    },
-    {
-        key: "PAISES",
-        label: "PAISES",
-        icon: 'ICONOPAISES.png',
-        link: "/",
-    },
-];
-
 
 
 

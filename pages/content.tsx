@@ -30,7 +30,7 @@ export default function Content() {
       <Header />
       <HomeCarousel />
       <BannerGeneric img="FOTO26.svg"
-        goto='/conductores'
+        goto='https://citybestapp.com/registro-conductores/'
       />
       {/*<MainPromotionalBanner includeFlags />*/}
       <FeaturesSection />
