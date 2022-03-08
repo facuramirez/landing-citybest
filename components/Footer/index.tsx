@@ -33,7 +33,7 @@ export default function Footer() {
               </small>
 
               <small className="footer-countries">
-                Colombia - Perú - Bolivia - Argentina
+                Colombia - Perú - Chile - Mexico
               </small>
 
               <div className="mt-2 d-flex justify-content-center">

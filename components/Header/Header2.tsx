@@ -1,20 +1,20 @@
 import { useEffect, useState } from "react";
 import { Nav, Navbar, OverlayTrigger, Popover, PopoverContent } from "react-bootstrap";
 import { isMobile } from "react-device-detect";
-import { PaisesAutorizados } from "../../utils/utils";
+import { geoFindMe, PaisesAutorizados } from "../../utils/utils";
 
-interface HeaderProps {
-  activeItem?: string;
-  country?: Object;
-  setcountry?: Function;
-}
-
-
-export default function Header2({ activeItem = "", country, setcountry }: HeaderProps) {
+export default function Header2() {
 
   const [styleNavbar, setstyleNavbar] = useState({})
   const [countrySelected, setcountrySelected] = useState(null);
   const [visibleTrigger, setvisibleTrigger] = useState(false)
+  const [country, setcountry] = useState(null);
+
+  useEffect(() => {
+    geoFindMe((result) => {
+      setcountry(result.country_name)
+    });
+  }, []);
 
   useEffect(() => {
     PaisesAutorizados.forEach(pais => {
@@ -64,7 +64,6 @@ export default function Header2({ activeItem = "", country, setcountry }: Header
           <Nav className="me-auto"
             navbar
             fill
-            activeKey={activeItem}
           >
             {menuItems.map((e) => (
               <OverlayTrigger
@@ -93,7 +92,6 @@ export default function Header2({ activeItem = "", country, setcountry }: Header
                 <Nav.Link
                   key={e.key}
                   href={e.label !== "PAISES" ? e.link : "#"}
-                  active={e.key === activeItem}
                   target={e.key === "ayuda-conductor" && "_blank"}
                 >
                   <NavIcon icon={

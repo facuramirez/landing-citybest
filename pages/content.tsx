@@ -14,19 +14,12 @@ export default function Content() {
     return null;
   }
 
-  const [country, setcountry] = useState(null);
-
-  React.useEffect(() => {
-    geoFindMe((result) => {
-      setcountry(result.country_name)
-    });
-  }, []);
 
   return (
     <div className="page">
       {!isMobile ?
-        <Header2 country={country} setcountry={setcountry} />
-        : <HeaderMobile country={country} setcountry={setcountry} />}
+        <Header2 />
+        : <HeaderMobile />}
       <Header />
       <HomeCarousel />
       <BannerGeneric img="FOTO26.svg"

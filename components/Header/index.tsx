@@ -80,7 +80,7 @@ export default function Header({ activeItem = "" }) {
         <div className="row">
           <div className={isMobile?"col":"col-8"}>
             <Navbar.Brand href="/">
-              <div className="col">
+              <div  className="col">
                 <img src="./img/logocitibest.png" />
                
                   <span style={{
@@ -100,9 +100,8 @@ export default function Header({ activeItem = "" }) {
                     Support
                   </span>
 
-                  <img style={{
+                  <img id="logopacto" style={{
                     marginLeft: "15px",
-                    maxWidth: isMobile ?'15%':'28%',
                   }} src="./img/logo_pacto_global.png" className="logo-redpacto" />
               </div>
 
@@ -113,7 +112,7 @@ export default function Header({ activeItem = "" }) {
 
           {isMobile && (<div style={{
             padding: '0.9rem',
-          }} className="col">
+          }} className="col ml-1">
             <Navbar.Toggle aria-controls="basic-navbar-nav" />
           </div>)}
 
@@ -174,12 +173,12 @@ const menuItems = [
     label: "CONCURSO",
     link: "/concurso",
   },
-  {
-    key: "help",
-    label: "AYUDA",
-    link:
-      "https://api.whatsapp.com/send?phone=56965734473&text=Necesito%20informaci%C3%B3n",
-  },
+  // {
+  //   key: "help",
+  //   label: "AYUDA",
+  //   link:
+  //     "https://api.whatsapp.com/send?phone=56965734473&text=Necesito%20informaci%C3%B3n",
+  // },
   {
     key: "contact",
     label: "CONTACTO",

@@ -1,21 +1,21 @@
 import { useEffect, useState } from "react";
-import { Nav, Navbar, OverlayTrigger, Popover, PopoverContent } from "react-bootstrap";
+import {OverlayTrigger, Popover, PopoverContent } from "react-bootstrap";
 import { isMobile } from "react-device-detect";
-import { PaisesAutorizados } from "../../utils/utils";
+import { geoFindMe, PaisesAutorizados } from "../../utils/utils";
 
-interface HeaderProps {
-    activeItem?: string;
-    country?: Object;
-    setcountry?: Function;
-}
-
-
-export default function HeaderMobile({ activeItem = "", country, setcountry }: HeaderProps) {
-    console.log("🚀 ~ file: HeaderMobile.tsx ~ line 14 ~ HeaderMobile ~ country", country)
+export default function HeaderMobile() {
 
     const [styleNavbar, setstyleNavbar] = useState({})
     const [countrySelected, setcountrySelected] = useState(null);
     const [visibleTrigger, setvisibleTrigger] = useState(false)
+
+    const [country, setcountry] = useState(null);
+
+    useEffect(() => {
+        geoFindMe((result) => {
+            setcountry(result.country_name)
+        });
+    }, []);
 
     useEffect(() => {
         PaisesAutorizados.forEach(pais => {
