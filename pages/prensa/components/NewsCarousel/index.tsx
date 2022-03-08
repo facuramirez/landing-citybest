@@ -143,7 +143,7 @@ const slides = {
     footer: (
       <p className="details-footer">
         Fuente: El Economista <br /> 17/01/2022 <br />
-        Chile
+        España
       </p>
     ),
   },
