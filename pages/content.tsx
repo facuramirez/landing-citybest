@@ -12,12 +12,12 @@ export default function Content() {
   if (typeof window === "undefined") {
     return null;
   }
-  
+
   const [country, setcountry] = useState(null);
-  
+
   React.useEffect(() => {
-    if(!isMobile){
-      geoFindMe((result)=>{
+    if (!isMobile) {
+      geoFindMe((result) => {
         setcountry(result.country_name)
       });
     }
@@ -25,7 +25,7 @@ export default function Content() {
 
   return (
     <div className="page">
-      {!isMobile && <Header2 country={country} setcountry={setcountry}/>}
+      {!isMobile && <Header2 country={country} setcountry={setcountry} />}
       <Header />
       <HomeCarousel />
       <BannerGeneric img="FOTO26.svg"
@@ -39,10 +39,7 @@ export default function Content() {
         img="DRIVERUSUARIO.svg"
         goto={null}
       />
-      <BannerGeneric
-        img="MARCASCITY-3.svg"
-        goto={null}
-      />
+      <Banner3Columns />
       <BannerGeneric
         img="playstore-appstore.svg"
         goto='https://play.google.com/store/apps/details?id=py.citybest.citybestpasajero&hl=es_CO&gl=US'
@@ -165,7 +162,7 @@ function VehiclesTypesSection() {
           <div className="col-12 col-md-4">
             <FeatureItem
               icon={
-                <img style={{ maxWidth: '150px' }} src="img/TELEFONO1.png" />
+                <img style={{ maxWidth: '250px' }} src="img/CITYBASIC.svg" />
               }
               title="Vehículos eléctricos"
               description="El costo por kilómetro de los automóviles eléctricos es sustancialmente inferior al de los automóviles de motor de combustión. Es por eso, que todos tus viajes con Citybest serán los más económicos del mercado"
@@ -174,7 +171,7 @@ function VehiclesTypesSection() {
           <div className="col-12 col-md-4">
             <FeatureItem
               icon={
-                <img style={{ maxWidth: '150px' }} src="img/TELEFONO1.png" />
+                <img style={{ maxWidth: '250px' }} src="img/CITYGAS.svg" />
               }
               title="Vehículos a gas"
               description="El rendimiento de un auto a gas en velocidad y potencia es similar, y en muchos casos hasta mejor, que el de uno a gasolina. Es por eso, que todos tus viajes con Citybest serán los más económicos del mercado"
@@ -183,7 +180,7 @@ function VehiclesTypesSection() {
           <div className="col-12 col-md-4">
             <FeatureItem
               icon={
-                <img style={{ maxWidth: '150px' }} src="img/TELEFONO1.png" />
+                <img style={{ maxWidth: '250px' }} src="img/CITYFULL.svg" />
               }
               title="Impacto"
               description="En Citybest contribuimos a disminuir la presencia de gases contaminantes en la atmósfera, principalmente el dióxido de carbono (CO2), monóxido de carbono (CO), entre otros."
@@ -241,4 +238,62 @@ function BannerGeneric({
       } src={`img/${img}`} style={{ width: "100%" }} alt="" />
     </div>
   );
+}
+
+const Banner3Columns = () => {
+
+  const handleClick = (url: string) => {
+    window.open(url, '_blank');
+  }
+
+  return (
+
+    <div className="row mb-5" >
+
+      <div style={{
+        paddingLeft: '0px !important',
+      }} className="col-12 col-md-4 pr-0">
+        <img
+          style={{
+            cursor: "pointer",
+
+          }}
+          onClick={() => handleClick('https://www.mercadopago.cl/')}
+          src="img/FOTO27.svg"
+          className="w-100"
+          alt=""
+        />
+      </div>
+
+      <div style={{
+        paddingLeft: 0
+      }} className="col-12 col-md-4 ml-0 pr-0">
+        <img
+          style={{
+            cursor: "pointer"
+          }}
+          onClick={() => handleClick('https://www.hihonor.com/cl/')}
+          src="img/FOTO28.svg"
+          className="w-100"
+          alt=""
+        />
+      </div>
+
+      <div style={{
+        paddingLeft: 0
+      }} className="col-12 col-md-4 pr-0">
+        <img
+          onClick={() => handleClick('https://jac.mx/?keyword=jac%20sunray%20precio&creative=499627464601&gclid=CjwKCAiAjoeRBhAJEiwAYY3nDGp6zLgUeybju4UNCmEbFdfBO1JaJRkAEvCjzY4FZs5eB556XdEA6RoCNn4QAvD_BwE')}
+          style={{
+            width: "84%",
+            cursor: "pointer"
+          }}
+          src="img/FOTO29.svg"
+          className="w-80"
+          alt=""
+        />
+      </div>
+    </div>
+
+  )
 }
