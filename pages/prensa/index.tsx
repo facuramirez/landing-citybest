@@ -9,9 +9,7 @@ import NewsCarousel from "./components/NewsCarousel";
 export default function NewspaperPage() {
   return (
     <div className="page">
-      {!isMobile ?
-        <Header2 />
-        : <HeaderMobile />}
+      {isMobile && <HeaderMobile />}
       <Header activeItem="newspaper" />
       <InitialSection />
       <SecondaryPromotionalBannerSectionBanner />

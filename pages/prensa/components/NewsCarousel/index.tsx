@@ -3,6 +3,36 @@ import { Carousel } from "react-responsive-carousel";
 import "react-responsive-carousel/lib/styles/carousel.min.css"; // requires a loader
 
 const slides = {
+
+  "news-10": {
+    img: "https://i1.wp.com/revistadiners.com.co/wp-content/uploads/2021/08/citybest_1200x800_2021.jpg?fit=1024%2C684&ssl=1",
+    title:
+      "La chilena CityBest llegará a España en 2023 como rival de Uber y Cabify",
+    description:
+      "El transporte urbano e interurbano de proximidad sigue sumando jugadores. La chilena CityBest, que opera en varios países de Latinoamérica como Argentina, Perú, Bolivia, Colombia y próximamente Brasil, desembarcará en España en 2023, según confirma a elEconomista su CEO, Gonzalo Casanga.",
+    source: "El Economista",
+    url: "https://www.eleconomista.es/empresas-finanzas/noticias/11570311/01/22/La-chilena-CityBest-llegara-a-Espana-en-2023-como-rival-de-Uber-y-Cabify.html",
+    footer: (
+      <p className="details-footer">
+        Fuente: El Economista <br /> 17/01/2022 <br />
+        España
+      </p>
+    ),
+  },
+
+  "news-11": {
+    img: "https://www.semana.com/resizer/4ln-NBjgLMSmoK55luzxn9TFLhs=/1200x675/filters:format(jpg):quality(50)//cloudfront-us-east-1.images.arcpublishing.com/semana/OKITZOU5XFGTHD57L4U4M4SZFM.jpg",
+    title: "La nueva app de transporte ecoamigable que llega a Colombia",
+    description: "Para Gonzalo Casanga, el chileno creador de la aplicación, el gran valor innovador de esta propuesta es un completo ecosistema que les facilitará la logística a conductores y usuarios, pues involucra, además de la alianza inicial con los hoteles, que asegurará el acercamiento a los clientes, la infraestructura tecnológica, un parque automotor propio y privado y la instalación de puntos de recarga. “Si bien hay grandes avances en políticas públicas e incentivos en movilidad eléctrica, en los puntos de recargas es donde vemos el mayor reto. Hace falta más ejecución y menos webinars por parte de las empresas encargadas”, indicó Casanga.",
+    source: "Semana",
+    url: "https://www.semana.com/hablan-las-marcas/articulo/citybest-la-app-de-transporte-urbano-con-vehiculos-ecologicos-que-llega-a-colombia/202200/",
+    footer: (
+      <p className="details-footer">
+        Fuente: Semana <br /> 17/02/2020 <br />
+        Colombia
+      </p>
+    ),
+  },
   "news-1": {
     img: "https://i1.wp.com/revistadiners.com.co/wp-content/uploads/2021/08/citybest_1200x800_2021.jpg?fit=1024%2C684&ssl=1",
     title: "El pecado es querer ser Uber. CEO de CityBest ",
@@ -131,36 +161,6 @@ const slides = {
     ),
   },
 
-
-  "news-10": {
-    img: "https://i1.wp.com/revistadiners.com.co/wp-content/uploads/2021/08/citybest_1200x800_2021.jpg?fit=1024%2C684&ssl=1",
-    title:
-      "La chilena CityBest llegará a España en 2023 como rival de Uber y Cabify",
-    description:
-      "El transporte urbano e interurbano de proximidad sigue sumando jugadores. La chilena CityBest, que opera en varios países de Latinoamérica como Argentina, Perú, Bolivia, Colombia y próximamente Brasil, desembarcará en España en 2023, según confirma a elEconomista su CEO, Gonzalo Casanga.",
-    source: "El Economista",
-    url: "https://www.eleconomista.es/empresas-finanzas/noticias/11570311/01/22/La-chilena-CityBest-llegara-a-Espana-en-2023-como-rival-de-Uber-y-Cabify.html",
-    footer: (
-      <p className="details-footer">
-        Fuente: El Economista <br /> 17/01/2022 <br />
-        España
-      </p>
-    ),
-  },
-
-  "news-11": {
-    img: "https://www.semana.com/resizer/4ln-NBjgLMSmoK55luzxn9TFLhs=/1200x675/filters:format(jpg):quality(50)//cloudfront-us-east-1.images.arcpublishing.com/semana/OKITZOU5XFGTHD57L4U4M4SZFM.jpg",
-    title: "La nueva app de transporte ecoamigable que llega a Colombia",
-    description: "Para Gonzalo Casanga, el chileno creador de la aplicación, el gran valor innovador de esta propuesta es un completo ecosistema que les facilitará la logística a conductores y usuarios, pues involucra, además de la alianza inicial con los hoteles, que asegurará el acercamiento a los clientes, la infraestructura tecnológica, un parque automotor propio y privado y la instalación de puntos de recarga. “Si bien hay grandes avances en políticas públicas e incentivos en movilidad eléctrica, en los puntos de recargas es donde vemos el mayor reto. Hace falta más ejecución y menos webinars por parte de las empresas encargadas”, indicó Casanga.",
-    source: "Semana",
-    url: "https://www.semana.com/hablan-las-marcas/articulo/citybest-la-app-de-transporte-urbano-con-vehiculos-ecologicos-que-llega-a-colombia/202200/",
-    footer: (
-      <p className="details-footer">
-        Fuente: Semana <br /> 17/02/2020 <br />
-        Colombia
-      </p>
-    ),
-  }
 };
 
 export default function NewsCarousel() {
@@ -214,6 +214,8 @@ export default function NewsCarousel() {
   const isDesktop = useMediaQuery("(min-width: 768px)");
 
   const NewsItems = () => {
+    console.log("slides", slides);
+
     return (
       <div className="news-items">
         {Object.keys(slides).map((e) => {
@@ -250,7 +252,7 @@ export default function NewsCarousel() {
         <Carousel renderThumbs={customRenderThumb}>
 
 
-        <NewsSlide
+          <NewsSlide
             id="news-11"
             title="La nueva app de transporte ecoamigable que llega a Colombia"
             image="https://www.semana.com/resizer/4ln-NBjgLMSmoK55luzxn9TFLhs=/1200x675/filters:format(jpg):quality(50)//cloudfront-us-east-1.images.arcpublishing.com/semana/OKITZOU5XFGTHD57L4U4M4SZFM.jpg"
