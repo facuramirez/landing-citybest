@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import { Nav, Navbar } from "react-bootstrap";
 import { isMobile } from "react-device-detect";
+import Button from "../Button";
 
 export default function Header({ activeItem = "" }) {
 
@@ -75,76 +76,82 @@ export default function Header({ activeItem = "" }) {
 
 
   return (
-    <div>
-      <Navbar style={styleNavbar} expand="md" className="main-navigation">
-        <div className="row">
-          <div className={isMobile?"col":"col-8"}>
-            <Navbar.Brand href="/">
-              <div  className="col">
-                <img src="./img/logocitibest.png" />
-               
-                  <span style={{
-                    borderLeft: '2px solid white',
-                    height: '80px',
-                    marginLeft: '1rem',
-                    fontSize: '2.2rem',
+    <Navbar style={styleNavbar} expand="md" className="main-navigation">
+      <div className="row">
+        <div className={isMobile ? "col" : "col-8"}>
+          <Navbar.Brand href="/">
+            <div className="col">
+              <img src="./img/logocitibest.png" />
 
-                  }}></span>
+              <span style={{
+                borderLeft: '2px solid white',
+                height: '80px',
+                marginLeft: '1rem',
+                fontSize: '2.2rem',
 
-                  <span style={{
-                    marginLeft: '1rem',
-                    fontSize: '0.8rem',
-                    fontWeight: 'bold',
-                    color: '#fff',
-                  }}>
-                    Support
-                  </span>
+              }}></span>
 
-                  <img id="logopacto" style={{
-                    marginLeft: "15px",
-                  }} src="./img/logo_pacto_global.png" className="logo-redpacto" />
-              </div>
+              <span style={{
+                marginLeft: '1rem',
+                fontSize: '0.8rem',
+                fontWeight: 'bold',
+                color: '#fff',
+              }}>
+                Support
+              </span>
 
-            </Navbar.Brand>
+              <img id="logopacto" style={{
+                marginLeft: "15px",
+                maxWidth: "50px",
+              }} src="./img/logo_pacto_global.png"
+                className="logo-redpacto" />
+            </div>
 
+          </Navbar.Brand>
 
-          </div>
-
-          {isMobile && (<div style={{
-            padding: '0.9rem',
-          }} className="col ml-1">
-            <Navbar.Toggle aria-controls="basic-navbar-nav" />
-          </div>)}
 
         </div>
 
+        {isMobile && (<div style={{
+          padding: '0.9rem',
+        }} className="col ml-1">
+          <Navbar.Toggle aria-controls="basic-navbar-nav" />
+        </div>)}
 
-        <Navbar.Collapse
-          id="basic-navbar-nav"
-          className="mr-auto mr-md-0 ml-0 main-menu justify-content-md-end"
+      </div>
+
+
+      <Navbar.Collapse
+        id="basic-navbar-nav"
+        className="mr-auto mr-md-0 ml-0 main-menu justify-content-md-end"
+      >
+        <Nav style={{
+          paddingLeft: '80px'
+        }} className="me-auto"
+          navbar
+          fill
+          activeKey={activeItem}
         >
-          <Nav style={{
-            paddingLeft: '80px'
-          }} className="me-auto"
-            navbar
-            fill
-            activeKey={activeItem}
-          >
-            {menuItems.map((e) => (
-              <Nav.Link
-                key={e.key}
-                href={e.link}
-                active={e.key === activeItem}
-                target={e.key === "help" && "_BLANK"}
-              >
-                <NavIcon />
-                <p className="linknavs">{e.label}</p>
-              </Nav.Link>
-            ))}
-          </Nav>
-        </Navbar.Collapse>
-      </Navbar>
-    </div>
+          {menuItems.map((e) => (
+            <Nav.Link
+              key={e.key}
+              href={e.link}
+              active={e.key === activeItem}
+              target={e.key === "help" && "_BLANK"}
+            >
+              <NavIcon />
+              <p className="linknavs">{e.label}</p>
+            </Nav.Link>
+          ))}
+
+        </Nav>
+        <button onClick={()=>{
+          window.open("https://citybestapp.com/registro-conductores/", "_blank")
+        }} style={{
+          color:'#421B71'
+        }} type="button" className="btn btn-light">!Quiero ser Conductor!</button>
+      </Navbar.Collapse>
+    </Navbar>
   );
 }
 
@@ -179,9 +186,9 @@ const menuItems = [
   //   link:
   //     "https://api.whatsapp.com/send?phone=56965734473&text=Necesito%20informaci%C3%B3n",
   // },
-  {
-    key: "contact",
-    label: "CONTACTO",
-    link: "/contacto",
-  },
+  // {
+  //   key: "contact",
+  //   label: "CONTACTO",
+  //   link: "/contacto",
+  // },
 ];

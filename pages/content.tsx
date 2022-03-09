@@ -1,19 +1,15 @@
-/* global jarallax */
-import React, { useState } from "react";
+import React from "react";
 import { isMobile } from "react-device-detect";
 import Footer from "../components/Footer";
 import Header from "../components/Header";
 import Header2 from "../components/Header/Header2";
 import HeaderMobile from "../components/Header/HeaderMobile";
 import HomeCarousel from "../components/HomeCarousel";
-import MainPromotionalBanner from "../components/MainPromotionalBanner";
-import { geoFindMe } from "../utils/utils";
 
 export default function Content() {
   if (typeof window === "undefined") {
     return null;
   }
-
 
   return (
     <div className="page">
