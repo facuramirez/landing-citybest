@@ -77,7 +77,9 @@ export default function Header({ activeItem = "" }) {
 
   return (
     <Navbar style={styleNavbar} expand="md" className="main-navigation">
-      <div className="row">
+      <div className="row" style={{
+        maxWidth:!isMobile&&'30%',
+      }}>
         <div className={isMobile ? "col" : "col-8"}>
           <Navbar.Brand href="/">
             <div className="col">
@@ -102,7 +104,6 @@ export default function Header({ activeItem = "" }) {
 
               <img id="logopacto" style={{
                 marginLeft: "15px",
-                maxWidth: "50px",
               }} src="./img/logo_pacto_global.png"
                 className="logo-redpacto" />
             </div>
@@ -144,13 +145,20 @@ export default function Header({ activeItem = "" }) {
             </Nav.Link>
           ))}
 
+          {isMobile && (<button onClick={() => {
+            window.open("https://citybestapp.com/registro-conductores/", "_blank")
+          }} style={{
+            color: '#421B71'
+          }} type="button" className="btn btn-light">!Quiero ser Conductor!</button>)}
+
         </Nav>
-        <button onClick={()=>{
+        {!isMobile && <button onClick={() => {
           window.open("https://citybestapp.com/registro-conductores/", "_blank")
         }} style={{
-          color:'#421B71'
-        }} type="button" className="btn btn-light">!Quiero ser Conductor!</button>
+          color: '#421B71'
+        }} type="button" className="btn btn-light">!Quiero ser Conductor!</button>}
       </Navbar.Collapse>
+
     </Navbar>
   );
 }
