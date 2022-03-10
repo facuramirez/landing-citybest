@@ -33,7 +33,7 @@ export default function Content() {
 
       {isMobile ? <GoogleAppStoresSection /> : <BannerGeneric
         img="playstore-appstore.svg"
-        goto='https://play.google.com/store/apps/details?id=py.citybest.citybestpasajero&hl=es_CO&gl=US'
+        goto='https://play.google.com/store/apps/details?id=py.citybest.citybestpasajero'
       />}
 
 
@@ -310,7 +310,7 @@ function GoogleAppStoresSection() {
               <div className="row">
                 <div className="col">
                   <img onClick={() => {
-                    window.open('https://play.google.com/store/apps/details?id=com.citybest.app', '_blank');
+                    window.open('https://play.google.com/store/apps/details?id=py.citybest.citybestpasajero', '_blank');
                   }} style={{
                     maxWidth: '200px',
                     marginBottom: '1rem',
@@ -323,7 +323,7 @@ function GoogleAppStoresSection() {
                   }} src="img/googleplaylogo.png" />
 
                   <img onClick={() => {
-                    window.open('https://play.google.com/store/apps/details?id=com.citybest.app', '_blank');
+                    window.open('https://play.google.com/store/apps/details?id=py.citybest.citybestpasajero', '_blank');
                   }} style={{
                     marginBottom: '1rem',
                     alignContent: 'center',
