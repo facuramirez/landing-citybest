@@ -8,12 +8,26 @@ import NewsCarousel from "./components/NewsCarousel";
 
 export default function NewspaperPage() {
   return (
-    <div className="page">
-      <Header />
-      <InitialSection />
-      <SecondaryPromotionalBannerSectionBanner />
-      <Footer />
-    </div>
+    <>
+      {!isMobile ?
+        <>
+          <Header2 />
+        </>
+        : (
+          <>
+            <HeaderMobile />
+            <Header />
+          </>
+        )}
+      <div className="page">
+        {!isMobile && <Header />}
+        <InitialSection />
+        <SecondaryPromotionalBannerSectionBanner />
+        <Footer />
+      </div>
+    </>
+
+
   );
 }
 

@@ -123,7 +123,9 @@ export default function Header({ activeItem = "" }) {
         {isMobile && (<div style={{
           padding: '0.9rem',
         }} className="col ml-1">
-          <Navbar.Toggle aria-controls="basic-navbar-nav" />
+          <Navbar.Toggle style={{
+            float: 'right',
+          }} aria-controls="basic-navbar-nav" />
         </div>)}
 
       </div>

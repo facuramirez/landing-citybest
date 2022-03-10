@@ -5,7 +5,7 @@ import "react-responsive-carousel/lib/styles/carousel.min.css"; // requires a lo
 const slides = {
 
   "news-11": {
-    img: "https://www.semana.com/resizer/4ln-NBjgLMSmoK55luzxn9TFLhs=/1200x675/filters:format(jpg):quality(50)//cloudfront-us-east-1.images.arcpublishing.com/semana/OKITZOU5XFGTHD57L4U4M4SZFM.jpg",
+    img: "img/citynoticiaauto.jpg",
     title: "La nueva app de transporte ecoamigable que llega a Colombia",
     description: "Para Gonzalo Casanga, el chileno creador de la aplicación, el gran valor innovador de esta propuesta es un completo ecosistema que les facilitará la logística a conductores y usuarios.",
     source: "Semana",
@@ -256,7 +256,7 @@ export default function NewsCarousel() {
           <NewsSlide
             id="news-11"
             title="La nueva app de transporte ecoamigable que llega a Colombia"
-            image="https://www.semana.com/resizer/4ln-NBjgLMSmoK55luzxn9TFLhs=/1200x675/filters:format(jpg):quality(50)//cloudfront-us-east-1.images.arcpublishing.com/semana/OKITZOU5XFGTHD57L4U4M4SZFM.jpg"
+            image="img/citynoticiaauto.jpg"
           />
 
           <NewsSlide
