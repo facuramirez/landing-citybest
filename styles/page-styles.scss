@@ -173,7 +173,7 @@ section {
   }
 }
 
-.main-navigation2{
+.main-navigation2 {
   padding-left: 5;
   background-color: black;
   color: white;
@@ -225,7 +225,6 @@ section {
     color: white !important;
   }
 }
-
 
 .main-navigation {
   padding-left: 10%;
@@ -286,14 +285,14 @@ section {
   text-decoration: none;
   transition: all 0.3s ease-in-out 0s;
   box-sizing: border-box;
-  font-family: 'SantanderFont';
+  font-family: "SantanderFont";
 }
 
 .linknavs2 {
   display: block;
   color: white;
   font-size: 80%;
-  font-family: 'SantanderFont';
+  font-family: "SantanderFont";
 }
 
 .footer {
@@ -729,17 +728,19 @@ section {
     font-size: 20px !important;
     padding-right: 8% !important;
   }
-  #logopacto{
+  #logopacto {
     max-width: 17%;
-    padding-right:10 ;
+    padding-right: 10;
   }
 }
 
 // Medium devices (tablets, 768px and up)
 @media (min-width: 768px) {
+  #rowMovil {
+    max-width: 30% !important;
+  }
   .main-navigation {
     font-size: inherit !important;
-    
   }
 
   .carousel .thumbs {
@@ -756,6 +757,11 @@ section {
 
 // Large devices (desktops, 992px and up)
 @media (min-width: 992px) {
+
+  #rowMovil {
+    max-width: 30% !important;
+  }
+
   .initial-banner {
     padding: 3em 2.5em !important;
 
@@ -796,6 +802,9 @@ section {
 
 // Extra large devices (large desktops, 1200px and up)
 @media (min-width: 1200px) {
+  #rowMovil {
+    max-width: 30% !important;
+  }
   .main-navigation {
   }
 }

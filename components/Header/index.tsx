@@ -6,6 +6,7 @@ import Button from "../Button";
 export default function Header({ activeItem = "" }) {
 
   const [styleNavbar, setstyleNavbar] = useState({})
+
   const handleScroll = () => {
     const position = window.pageYOffset;
     if (position > 0 && !isMobile) {
@@ -74,13 +75,19 @@ export default function Header({ activeItem = "" }) {
 
   }, [isMobile]);
 
+  const [typeCol, settypeCol] = useState('col-8')
+  useEffect(() => {
+    if (isMobile) {
+      settypeCol('col-8')
+    } else {
+      settypeCol('col')
+    }
+  }, [])
 
   return (
     <Navbar style={styleNavbar} expand="md" className="main-navigation">
-      <div className="row" style={{
-        maxWidth:!isMobile&&'30%',
-      }}>
-        <div className={isMobile ? "col" : "col-8"}>
+      <div id="rowMovil" className="row" >
+        <div className={typeCol}>
           <Navbar.Brand href="/">
             <div className="col">
               <img src="./img/logocitibest.png" />
@@ -103,7 +110,7 @@ export default function Header({ activeItem = "" }) {
               </span>
 
               <img id="logopacto" style={{
-                marginLeft: "15px",
+                marginLeft: "8%",
               }} src="./img/logo_pacto_global.png"
                 className="logo-redpacto" />
             </div>

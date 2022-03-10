@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import {OverlayTrigger, Popover, PopoverContent } from "react-bootstrap";
+import { OverlayTrigger, Popover, PopoverContent } from "react-bootstrap";
 import { isMobile } from "react-device-detect";
 import { geoFindMe, PaisesAutorizados } from "../../utils/utils";
 
@@ -54,7 +54,10 @@ export default function HeaderMobile() {
 
     return (
         <nav
-            className="navbar navbar-expand-lg navbar-dark bg-dark">
+            // navbar-dark bg-dark
+            className="navbar navbar-expand-lg" style={{
+                backgroundColor: 'black'
+            }}>
             <OverlayTrigger
 
                 show={visibleTrigger}
@@ -72,54 +75,53 @@ export default function HeaderMobile() {
                         </PopoverContent>
                     </Popover>}
             >
-                <div className="row" style={
-                    {
 
-                    }
-                }>
-                    <div className="col-4">
-                        {countrySelected ? <NavIcon icon={
-                            countrySelected.img
-                        } /> : <img style={{
-                            width: '15%'
-                        }} src={`img/ICONOPAISES.png`} className="nav-icon" />}
-                        <span style={{
-                            fontSize: "1rem",
-                            color: "white",
-                            fontWeight: 400,
-                            marginLeft: "0.5rem",
-                        }}>
-                            {countrySelected ? countrySelected.nombre : 'Paises'}
-                        </span>
-                    </div>
-
-                    <div className="col ml-5" >
-                        <img style={{
-                            width: '10%'
-                        }} src={`img/AYUDAALCONDUCTOR.png`} className="nav-icon" />
-
-                        <span style={{
-                            fontSize: "1rem",
-                            fontWeight: 400,
-                            color: "white",
-                            marginLeft: "0.5rem",
-                        }}>
-                            Ayuda al conductor
-                        </span>
-                    </div>
-
-
+                <div className="col">
+                    {countrySelected ? <NavIcon icon={
+                        countrySelected.img
+                    } /> : <img style={{
+                        width: '15%'
+                    }} src={`img/ICONOPAISES.png`} className="nav-icon" />}
+                    <span style={{
+                        fontSize: "1rem",
+                        color: "white",
+                        fontWeight: 400,
+                        marginLeft: "0.5rem",
+                    }}>
+                        {countrySelected ? countrySelected.nombre : 'Paises'}
+                    </span>
                 </div>
-
             </OverlayTrigger>
 
-        </nav>
+
+            <img onClick={() => {
+                window.open("https://api.whatsapp.com/send?phone=573243222725&text=Necesito%20informaci%C3%B3n", '_blank');
+            }} style={{
+                width: '5%',
+                cursor: 'pointer'
+            }} src={`img/AYUDAALCONDUCTOR.png`} className="nav-icon" />
+
+            <span onClick={() => {
+                window.open("https://api.whatsapp.com/send?phone=573243222725&text=Necesito%20informaci%C3%B3n", '_blank');
+            }} style={{
+                fontSize: "1rem",
+                fontWeight: 400,
+                color: "white",
+                marginLeft: "0.5rem",
+                cursor: 'pointer'
+
+            }}>
+                Ayuda al conductor
+            </span>
+
+
+        </nav >
     );
 }
 
 function NavIcon({ icon }) {
     return <img style={{
-        width: '20%'
+        width: '10%'
     }} src={`img/${icon}`} className="nav-icon" />;
 }
 
@@ -138,9 +140,7 @@ const ListCountrys = ({
     }
     return (
 
-        <div className="container" style={{
-            background:'black'
-        }}>
+        <div className="container" >
             <div className="row" style={{
                 cursor: 'pointer',
                 marginBottom: '5px',
