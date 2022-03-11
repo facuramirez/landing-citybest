@@ -1,9 +1,22 @@
 // import "bootstrap/dist/css/bootstrap.min.css";
+import Router from "next/dist/next-server/lib/router/router";
 import Head from "next/head";
-
+import { useEffect, useState } from "react";
+import '../styles/globals.css';
+import { useRouter } from "next/router";
 import "../styles/page-styles.scss";
+import { Alert } from "react-bootstrap";
 
 function MyApp({ Component, pageProps }) {
+  const router = useRouter();
+
+  const [loading, setloading] = useState(true);
+  useEffect(() => {
+    window.onload = () => {
+     setloading(false);
+    };
+  }, []);
+
   return (
     <>
       <Head>
@@ -40,9 +53,19 @@ function MyApp({ Component, pageProps }) {
 
         <script src="https://unpkg.com/jarallax@1/dist/jarallax-video.min.js"></script>
       </Head>
+      {loading&&<PreloaderApp />}
       <Component {...pageProps} />
     </>
   );
 }
 
 export default MyApp;
+
+const PreloaderApp = () => {
+  return (
+    <div class="preloaderBg" id="preloader" >
+      <div class="preloader"></div>
+      <div class="preloader2"></div>
+    </div>
+  );
+};
