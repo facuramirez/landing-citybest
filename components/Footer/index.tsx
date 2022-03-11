@@ -28,9 +28,20 @@ export default function Footer() {
                 </a>
               </div>
 
+              <small style={{
+                cursor: 'pointer',
+                
+              }} onClick={() => {
+                window.location.href = '/terminos-condiciones-y-politicas-de-privacidad';
+              }}
+                className="mb-2 footer-policy">
+                Terminos & Condiciones<br />
+              </small>
+
               <small className="mb-2 footer-policy">
                 © {new Date().getFullYear()} Citybest Todos los derechos reservados. <br />
               </small>
+
 
               <small className="footer-countries">
                 Colombia - Perú - Chile - Mexico
@@ -47,6 +58,6 @@ export default function Footer() {
           </div>
         </div>
       </div>
-    </div>
+    </div >
   );
 }

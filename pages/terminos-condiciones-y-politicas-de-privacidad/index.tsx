@@ -1,4 +1,10 @@
-<html>
+import React from 'react';
+
+export default function TerminosCondiciones() {
+    return (
+        <div className="content" dangerouslySetInnerHTML={{
+            __html: `
+        <html>
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <meta name="Generator" content="Microsoft Word 15 (filtered)" />
@@ -5659,3 +5665,6 @@
     </div>
   </body>
 </html>
+`}}></div>
+    )
+}

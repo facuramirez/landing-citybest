@@ -1,3 +1,4 @@
+import Cookies from "js-cookie";
 import { useEffect, useState } from "react";
 import { OverlayTrigger, Popover, PopoverContent } from "react-bootstrap";
 import { isMobile } from "react-device-detect";
@@ -12,10 +13,15 @@ export default function HeaderMobile() {
     const [country, setcountry] = useState(null);
 
     useEffect(() => {
-        geoFindMe((result) => {
+        if (Cookies.get('country')) {
+          setcountry(Cookies.get('country'))
+        } else {
+          geoFindMe((result) => {
             setcountry(result.country_name)
-        });
-    }, []);
+            Cookies.set('country', result.country_name)
+          });
+        }
+      }, []);
 
     useEffect(() => {
         PaisesAutorizados.forEach(pais => {
@@ -136,6 +142,7 @@ const ListCountrys = ({
 
     const HideAndShowCountry = (country: string) => {
         setcountry(country)
+        Cookies.set('country', country)
         setvisibleTrigger(!visibleTrigger)
     }
     return (

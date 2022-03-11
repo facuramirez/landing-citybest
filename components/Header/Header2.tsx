@@ -2,18 +2,26 @@ import { useEffect, useState } from "react";
 import { Nav, Navbar, OverlayTrigger, Popover, PopoverContent } from "react-bootstrap";
 import { isMobile } from "react-device-detect";
 import { geoFindMe, PaisesAutorizados } from "../../utils/utils";
+import Cookies from 'js-cookie'
 
 export default function Header2() {
 
   const [styleNavbar, setstyleNavbar] = useState({})
-  const [countrySelected, setcountrySelected] = useState(null);
+  const [countrySelected, setcountrySelected] = useState(
+    null
+  );
   const [visibleTrigger, setvisibleTrigger] = useState(false)
   const [country, setcountry] = useState(null);
 
   useEffect(() => {
-    geoFindMe((result) => {
-      setcountry(result.country_name)
-    });
+    if (Cookies.get('country')) {
+      setcountry(Cookies.get('country'))
+    } else {
+      geoFindMe((result) => {
+        setcountry(result.country_name)
+        Cookies.set('country', result.country_name)
+      });
+    }
   }, []);
 
   useEffect(() => {
@@ -155,6 +163,7 @@ const ListCountrys = ({
 
   const HideAndShowCountry = (country: string) => {
     setcountry(country)
+    Cookies.set('country', country)
     setvisibleTrigger(!visibleTrigger)
   }
   return (
