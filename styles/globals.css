@@ -29,7 +29,7 @@ a {
 
 .preloader {
   margin: auto;
-  background: url('../public/img/CITYlogoMORADO.png') no-repeat center;
+  background: url('CITYlogoMORADO.png') no-repeat center;
   background-size: 150px;
   width: 300px;
   height: 300px;
