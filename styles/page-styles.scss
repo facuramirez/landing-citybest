@@ -4,6 +4,11 @@ $primary-color: #441a7b;
 $secondary-color: #36de94;
 $grey: #f4f4f6;
 
+.page{
+  animation: fadeIn; /* referring directly to the animation's @keyframe declaration */
+  animation-duration: 2s; /* don't forget to set a duration! */
+}
+
 @font-face {
   font-family: "Overpass", sans-serif !important;
   /* Antes de descargar el archivo, le decimos al buscador

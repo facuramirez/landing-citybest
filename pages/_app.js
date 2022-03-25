@@ -2,7 +2,7 @@
 import Router from "next/dist/next-server/lib/router/router";
 import Head from "next/head";
 import { useEffect, useState } from "react";
-import '../styles/globals.css';
+import "../styles/globals.css";
 import { useRouter } from "next/router";
 import "../styles/page-styles.scss";
 import { Alert } from "react-bootstrap";
@@ -13,7 +13,7 @@ function MyApp({ Component, pageProps }) {
   const [loading, setloading] = useState(true);
   useEffect(() => {
     window.onload = () => {
-     setloading(false);
+      setloading(false);
     };
   }, []);
 
@@ -50,10 +50,13 @@ function MyApp({ Component, pageProps }) {
         <link href="/fonts/style.css" rel="stylesheet" />
         <link rel="shortcut icon" href="imag/favicon.svg" type="image/x-icon" />
         <script src="https://unpkg.com/jarallax@1/dist/jarallax.min.js"></script>
-
+        <link
+          rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
+        />
         <script src="https://unpkg.com/jarallax@1/dist/jarallax-video.min.js"></script>
       </Head>
-      {loading&&<PreloaderApp />}
+      {loading && <PreloaderApp />}
       <Component {...pageProps} />
     </>
   );
@@ -63,7 +66,7 @@ export default MyApp;
 
 const PreloaderApp = () => {
   return (
-    <div class="preloaderBg" id="preloader" >
+    <div class="preloaderBg" id="preloader">
       <div class="preloader"></div>
       <div class="preloader2"></div>
     </div>
