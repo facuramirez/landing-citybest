@@ -155,14 +155,14 @@ export default function Header({ activeItem = "" }) {
           ))}
 
           {isMobile && (<button onClick={() => {
-            window.open("https://citybestapp.com/registro-conductores/", "_blank")
+            window.open("https://citybest-conductores.vercel.app/", "_blank")
           }} style={{
             color: '#421B71'
           }} type="button" className="btn btn-light">!Quiero ser Conductor!</button>)}
 
         </Nav>
         {!isMobile && <button onClick={() => {
-          window.open("https://citybestapp.com/registro-conductores/", "_blank")
+          window.open("https://citybest-conductores.vercel.app/", "_blank")
         }} style={{
           color: '#421B71'
         }} type="button" className="btn btn-light">!Quiero ser Conductor!</button>}

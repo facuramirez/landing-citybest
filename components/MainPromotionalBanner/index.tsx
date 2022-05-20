@@ -36,7 +36,7 @@ export default function MainPromotionalBanner({
             size="lg"
             onClick={() => {
               window.location.href =
-                "https://citybestapp.com/registro-conductores/";
+                "https://citybest-conductores.vercel.app/";
             }}
           >
             <span className="mr-2">
