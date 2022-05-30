@@ -19,7 +19,7 @@ export default function Content() {
       <Header />
       <HomeCarousel />
       <BannerGeneric img="FOTO26.svg"
-        goto='https://citybestapp.com/registro-conductores/'
+        goto='https://citybest-conductores.vercel.app/'
       />
       {/*<MainPromotionalBanner includeFlags />*/}
       <FeaturesSection />
