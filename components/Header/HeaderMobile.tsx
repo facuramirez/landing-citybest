@@ -101,14 +101,14 @@ export default function HeaderMobile() {
 
 
             <img onClick={() => {
-                window.open("https://api.whatsapp.com/send?phone=573243222725&text=Necesito%20informaci%C3%B3n", '_blank');
+                window.open("https://api.whatsapp.com/send?phone=56994179310&text=Necesito%20informaci%C3%B3n", '_blank');
             }} style={{
                 width: '5%',
                 cursor: 'pointer'
             }} src={`img/AYUDAALCONDUCTOR.png`} className="nav-icon" />
 
             <span onClick={() => {
-                window.open("https://api.whatsapp.com/send?phone=573243222725&text=Necesito%20informaci%C3%B3n", '_blank');
+                window.open("https://api.whatsapp.com/send?phone=56994179310&text=Necesito%20informaci%C3%B3n", '_blank');
             }} style={{
                 fontSize: "1rem",
                 fontWeight: 400,
