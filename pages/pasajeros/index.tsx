@@ -39,10 +39,10 @@ function TravelWithUsSection() {
           <HighwaySteps />
 
           <div className="flags-section">
-            <img src="img/paises/MEXICO.png" alt="" />
-            <img src="img/paises/COLOMBIA.png" alt="" />
-            <img src="img/paises/URUGUAY.png" alt="" />
-            <img src="img/paises/CHILE.png" alt="" />
+            <img src="img/paises/Mexico.png" alt="" />
+            <img src="img/paises/Colombia.png" alt="" />
+            <img src="img/paises/Uruguay.png" alt="" />
+            <img src="img/paises/Chile.png" alt="" />
           </div>
         </div>
       </div>

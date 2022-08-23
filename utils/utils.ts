@@ -43,7 +43,7 @@ export const PaisesAutorizados = [
   {
     id: "Chile",
     nombre: "Chile",
-    img: "paises/CHILE.png",
+    img: "paises/Chile.png",
   },
 
   {
@@ -55,12 +55,12 @@ export const PaisesAutorizados = [
   {
     id: "Mexico",
     nombre: "Mexico",
-    img: "paises/MEXICO.png",
+    img: "paises/Mexico.png",
   },
 
   {
     id: "Uruguay",
     nombre: "Uruguay",
-    img: "paises/URUGUAY.png",
+    img: "paises/Uruguay.png",
   },
 ];

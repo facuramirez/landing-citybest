@@ -184,7 +184,7 @@ const ListCountrys = ({ setcountry, setvisibleTrigger, visibleTrigger }) => {
             style={{
               width: "10%",
             }}
-            src="img/paises/MEXICO.png"
+            src="img/paises/Mexico.png"
             className="img-fluid"
           />
           <span
@@ -244,7 +244,7 @@ const ListCountrys = ({ setcountry, setvisibleTrigger, visibleTrigger }) => {
             style={{
               width: "10%",
             }}
-            src="img/paises/URUGUAY.png"
+            src="img/paises/Uruguay.png"
             className="img-fluid"
           />
           <span
@@ -274,7 +274,7 @@ const ListCountrys = ({ setcountry, setvisibleTrigger, visibleTrigger }) => {
             style={{
               width: "10%",
             }}
-            src="img/paises/CHILE.png"
+            src="img/paises/Chile.png"
             className="img-fluid"
           />
           <span
@@ -331,7 +331,7 @@ const Partners = () => {
 
       <img
         style={{
-          width: "10%",
+          width: "9%",
           paddingLeft: 4,
           marginRight: 10,
         }}

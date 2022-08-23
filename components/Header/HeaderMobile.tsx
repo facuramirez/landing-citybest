@@ -157,7 +157,7 @@ const ListCountrys = ({
                 <div className="col">
                     <img style={{
                         width: '10%'
-                    }} src="img/paises/MEXICO.png" className="img-fluid" />
+                    }} src="img/paises/Mexico.png" className="img-fluid" />
                     <span style={{
                         fontSize: '0.8rem',
                         fontWeight: 'bold',
@@ -199,7 +199,7 @@ const ListCountrys = ({
                 <div className="col">
                     <img style={{
                         width: '10%'
-                    }} src="img/paises/URUGUAY.png" className="img-fluid" />
+                    }} src="img/paises/Uruguay.png" className="img-fluid" />
                     <span style={{
                         fontSize: '0.8rem',
                         fontWeight: 'bold',
@@ -222,7 +222,7 @@ const ListCountrys = ({
                 <div className="col">
                     <img style={{
                         width: '10%'
-                    }} src="img/paises/CHILE.png" className="img-fluid" />
+                    }} src="img/paises/Chile.png" className="img-fluid" />
                     <span style={{
                         fontSize: '0.8rem',
                         fontWeight: 'bold',
