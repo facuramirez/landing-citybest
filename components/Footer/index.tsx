@@ -7,7 +7,7 @@ export default function Footer() {
             <div className="d-flex flex-column justify-content text-center center align-items center">
               <p className="footer-title mb-3 text-primary text-bold">
                 Citybest está presente en México, Colombia, Uruguay y Chile
-              </p>
+              </p> 
 
               <div className="social-icons mb-3">
                 {/* <a className="social-icon">
