@@ -91,9 +91,10 @@ function BannerSection() {
             </span>
 
             <div className="flags-section">
-              <img src="img/col.svg" alt="" />
-              <img src="img/bol.svg" alt="" />
-              <img src="img/ecua.svg" alt="" />
+              <img src="img/paises/MEXICO.png" alt="" />
+              <img src="img/paises/COLOMBIA.png" alt="" />
+              <img src="img/paises/URUGUAY.png" alt="" />
+              <img src="img/paises/CHILE.png" alt="" />
             </div>
           </div>
         </div>

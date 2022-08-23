@@ -199,13 +199,13 @@ const ListCountrys = ({
                 <div className="col">
                     <img style={{
                         width: '10%'
-                    }} src="img/paises/PERU.png" className="img-fluid" />
+                    }} src="img/paises/URUGUAY.png" className="img-fluid" />
                     <span style={{
                         fontSize: '0.8rem',
                         fontWeight: 'bold',
                         fontFamily: 'SantanderFont',
                         marginLeft: 10
-                    }}>Peru</span>
+                    }}>Uruguay</span>
                 </div>
             </div>
 

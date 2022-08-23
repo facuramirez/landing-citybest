@@ -13,29 +13,28 @@ export default function Content() {
 
   return (
     <div className="page">
-      {!isMobile ?
-        <Header2 />
-        : <HeaderMobile />}
+      {!isMobile ? <Header2 /> : <HeaderMobile />}
       <Header />
       <HomeCarousel />
-      <BannerGeneric img="FOTO26.svg"
-        goto='https://citybest-conductores.vercel.app/'
+      <BannerGeneric
+        img="slider-estatico.webp"
+        goto="https://citybest-conductores.vercel.app/"
       />
       {/*<MainPromotionalBanner includeFlags />*/}
       <FeaturesSection />
       <AvailabilitySection />
       <VehiclesTypesSection />
-      <BannerGeneric
-        img="DRIVERUSUARIO.svg"
-        goto={null}
-      />
+      <BannerGeneric img="DRIVERUSUARIO.svg" goto={null} />
       <Banner3Columns />
 
-      {isMobile ? <GoogleAppStoresSection /> : <BannerGeneric
-        img="playstore-appstore.svg"
-        goto='https://play.google.com/store/apps/details?id=py.citybest.citybestpasajero'
-      />}
-
+      {isMobile ? (
+        <GoogleAppStoresSection />
+      ) : (
+        <BannerGeneric
+          img="playstore-appstore.svg"
+          goto="https://play.google.com/store/apps/details?id=py.citybest.citybestpasajero"
+        />
+      )}
 
       <Footer />
     </div>
@@ -44,10 +43,12 @@ export default function Content() {
 
 function FeaturesSection() {
   return (
-    <section className="banner">
-      <div className="container">
+    <section className="banner" style={{ padding: "0px", marginBottom: '1rem' }}>
+      <div className="">
         <div className="row">
-          <div className="col-12 col-md-4">
+          <img width={"100%"} src="img/franja-mapa-y-textos.webp" alt="" />
+
+          {/* <div className="col-12 col-md-4">
             <FeatureItem
               icon={<img style={{ maxWidth: '250px' }} src="img/AUTO1.png" alt="" />}
               title={<FeatureTitle title="Electromovilidad" />}
@@ -67,7 +68,7 @@ function FeaturesSection() {
               title={<FeatureTitle title="Realiza envíos" />}
               description="Una forma de enviar y recibir objetos desde nuestra aplicación de manera segura con la que, además, ayudamos a los conductores que encuentran en Citybest una fuente de ingresos indispensable."
             />
-          </div>
+          </div> */}
         </div>
       </div>
     </section>
@@ -103,7 +104,8 @@ function FeatureItem({ icon, title, description }) {
 function AvailabilitySection() {
   return (
     <section className="banner bg-primary">
-      <div className="container">
+      <img src="img/franja-morada-telefono.webp" width={"100%"} alt="" />
+      {/* <div className="container">
         <div className="row d-flex justify-content-center">
           <div className="col-12 col-md-6 col-lg-5 mb-3 mb-md-0">
             <div className="d-flex flex-column  ">
@@ -141,7 +143,7 @@ function AvailabilitySection() {
           </div>
         </div>
 
-      </div>
+      </div> */}
     </section>
   );
 }
@@ -150,11 +152,11 @@ function VehiclesTypesSection() {
   return (
     <section className="banner vehicles-section">
       <div className="container">
-        <div className="row">
+        <div className="row d-flex justify-content-between">
           <div className="col-12 col-md-4">
             <FeatureItem
               icon={
-                <img style={{ maxWidth: '250px' }} src="img/CITYBASIC.svg" />
+                <img style={{ maxWidth: "100%" }} src="img/boton-citycero-electrico.png" />
               }
               title="Vehículos eléctricos"
               description="El costo por kilómetro de los automóviles eléctricos es sustancialmente inferior al de los automóviles de motor de combustión. Es por eso, que todos tus viajes con Citybest serán los más económicos del mercado"
@@ -162,9 +164,7 @@ function VehiclesTypesSection() {
           </div>
           <div className="col-12 col-md-4">
             <FeatureItem
-              icon={
-                <img style={{ maxWidth: '250px' }} src="img/CITYGAS.svg" />
-              }
+              icon={<img style={{ maxWidth: "100%" }} src="img/boton-cityzero-gas.png" />}
               title="Vehículos a gas"
               description="El rendimiento de un auto a gas en velocidad y potencia es similar, y en muchos casos hasta mejor, que el de uno a gasolina. Es por eso, que todos tus viajes con Citybest serán los más económicos del mercado"
             />
@@ -172,7 +172,7 @@ function VehiclesTypesSection() {
           <div className="col-12 col-md-4">
             <FeatureItem
               icon={
-                <img style={{ maxWidth: '250px' }} src="img/CITYFULL.svg" />
+                <img style={{ maxWidth: "100%" }} src="img/boton-citycero-hibrido.png" />
               }
               title="Impacto"
               description="En Citybest contribuimos a disminuir la presencia de gases contaminantes en la atmósfera, principalmente el dióxido de carbono (CO2), monóxido de carbono (CO), entre otros."
@@ -211,74 +211,91 @@ function FooterDownloadSection() {
   );
 }
 
-function BannerGeneric({
-  img,
-  goto
-}) {
+function BannerGeneric({ img, goto }) {
   return (
-    <div style={{ position: "relative", marginBottom: '1.5rem', border: 'none', cursor: goto != null && 'pointer' }}>
-      <img onClick={
-        (e) => {
+    <div
+      style={{
+        position: "relative",
+        marginBottom: "1rem",
+        marginTop: "1rem",
+        border: "none",
+        cursor: goto != null && "pointer",
+      }}
+    >
+      <img
+        onClick={(e) => {
           e.preventDefault();
 
-          if (goto != null && goto.includes('https')) {
-            window.open(goto, '_blank');
-          } else if (goto != null && !goto.includes('https')) {
+          if (goto != null && goto.includes("https")) {
+            window.open(goto, "_blank");
+          } else if (goto != null && !goto.includes("https")) {
             window.location.href = goto;
           }
-        }
-      } src={`img/${img}`} style={{ width: "100%" }} alt="" />
+        }}
+        src={`img/${img}`}
+        style={{ width: "100%" }}
+        alt=""
+      />
     </div>
   );
 }
 
 const Banner3Columns = () => {
-
   const handleClick = (url: string) => {
-    window.open(url, '_blank');
-  }
+    window.open(url, "_blank");
+  };
 
   return (
-
-    <div style={{
-    }} className={!isMobile && "row mb-5"} >
-
-      <div style={{
-        paddingLeft: 0,
-      }} className="col-12 col-md-4 pr-0">
+    <div style={{}} className={!isMobile && "row mb-5"}>
+      <div
+        style={{
+          paddingLeft: 0,
+        }}
+        className="col-12 col-md-4 pr-0"
+      >
         <img
           style={{
             cursor: "pointer",
           }}
-          onClick={() => handleClick('https://www.mercadopago.cl/')}
+          onClick={() => handleClick("https://www.mercadopago.cl/")}
           src="img/FOTO27.svg"
           className="w-100"
           alt=""
         />
       </div>
 
-      <div style={{
-        paddingLeft: 0
-      }} className="col-12 col-md-4 ml-0 pr-0">
+      <div
+        style={{
+          paddingLeft: 0,
+        }}
+        className="col-12 col-md-4 ml-0 pr-0"
+      >
         <img
           style={{
-            cursor: "pointer"
+            cursor: "pointer",
           }}
-          onClick={() => handleClick('https://www.hihonor.com/cl/')}
+          onClick={() => handleClick("https://www.hihonor.com/cl/")}
           src="img/FOTO28.svg"
           className="w-100"
           alt=""
         />
       </div>
 
-      <div style={{
-        paddingLeft: 0
-      }} className="col-12 col-md-4 pr-0">
+      <div
+        style={{
+          paddingLeft: 0,
+        }}
+        className="col-12 col-md-4 pr-0"
+      >
         <img
-          onClick={() => handleClick('https://jac.mx/?keyword=jac%20sunray%20precio&creative=499627464601&gclid=CjwKCAiAjoeRBhAJEiwAYY3nDGp6zLgUeybju4UNCmEbFdfBO1JaJRkAEvCjzY4FZs5eB556XdEA6RoCNn4QAvD_BwE')}
+          onClick={() =>
+            handleClick(
+              "https://jac.mx/?keyword=jac%20sunray%20precio&creative=499627464601&gclid=CjwKCAiAjoeRBhAJEiwAYY3nDGp6zLgUeybju4UNCmEbFdfBO1JaJRkAEvCjzY4FZs5eB556XdEA6RoCNn4QAvD_BwE"
+            )
+          }
           style={{
             width: "84%",
-            cursor: "pointer"
+            cursor: "pointer",
           }}
           src="img/FOTO29.svg"
           className={isMobile ? "w-100" : "w-80"}
@@ -286,16 +303,17 @@ const Banner3Columns = () => {
         />
       </div>
     </div>
-
-  )
-}
-
+  );
+};
 
 function GoogleAppStoresSection() {
   return (
-    <section style={{
-      marginTop: '1rem',
-    }} className="banner bg-primary">
+    <section
+      style={{
+        marginTop: "1rem",
+      }}
+      className="banner bg-primary"
+    >
       <div className="container">
         <div className="row d-flex justify-content-center">
           <div className="col-12 col-md-6 col-lg-5 mb-3 mb-md-0">
@@ -306,37 +324,47 @@ function GoogleAppStoresSection() {
                 </span>
               </h3>
 
-
               <div className="row">
                 <div className="col">
-                  <img onClick={() => {
-                    window.open('https://play.google.com/store/apps/details?id=py.citybest.citybestpasajero', '_blank');
-                  }} style={{
-                    maxWidth: '200px',
-                    marginBottom: '1rem',
-                    alignContent: 'center',
-                    alignItems: 'center',
-                    justifyContent: 'center',
-                    display: 'block',
-                    margin: 'auto'
+                  <img
+                    onClick={() => {
+                      window.open(
+                        "https://play.google.com/store/apps/details?id=py.citybest.citybestpasajero",
+                        "_blank"
+                      );
+                    }}
+                    style={{
+                      maxWidth: "200px",
+                      marginBottom: "1rem",
+                      alignContent: "center",
+                      alignItems: "center",
+                      justifyContent: "center",
+                      display: "block",
+                      margin: "auto",
+                    }}
+                    src="img/googleplaylogo.png"
+                  />
 
-                  }} src="img/googleplaylogo.png" />
-
-                  <img onClick={() => {
-                    window.open('https://play.google.com/store/apps/details?id=py.citybest.citybestpasajero', '_blank');
-                  }} style={{
-                    marginBottom: '1rem',
-                    alignContent: 'center',
-                    alignItems: 'center',
-                    justifyContent: 'center',
-                    display: 'block',
-                    margin: 'auto',
-                    maxWidth: '220px',
-                  }} src="img/appstorelogo.png" />
+                  <img
+                    onClick={() => {
+                      window.open(
+                        "https://play.google.com/store/apps/details?id=py.citybest.citybestpasajero",
+                        "_blank"
+                      );
+                    }}
+                    style={{
+                      marginBottom: "1rem",
+                      alignContent: "center",
+                      alignItems: "center",
+                      justifyContent: "center",
+                      display: "block",
+                      margin: "auto",
+                      maxWidth: "220px",
+                    }}
+                    src="img/appstorelogo.png"
+                  />
                 </div>
               </div>
-
-
             </div>
           </div>
           <div className="col-12 col-md-6 col-lg-4 position-relative">
@@ -345,7 +373,6 @@ function GoogleAppStoresSection() {
             </div>
           </div>
         </div>
-
       </div>
     </section>
   );

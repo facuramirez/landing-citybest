@@ -4,45 +4,44 @@ import { isMobile } from "react-device-detect";
 import Button from "../Button";
 
 export default function Header({ activeItem = "" }) {
-
-  const [styleNavbar, setstyleNavbar] = useState({})
+  const [styleNavbar, setstyleNavbar] = useState({});
 
   const handleScroll = () => {
     const position = window.pageYOffset;
     if (position > 0 && !isMobile) {
       setstyleNavbar({
         zIndex: 3,
-        position: 'fixed',
+        position: "fixed",
         top: 0,
-        display: 'flex',
-        alignItems: 'center',
-        flexDirection: 'row',
-        justifyContent: 'space-between',
-        minWidth: '100%',
+        display: "flex",
+        alignItems: "center",
+        flexDirection: "row",
+        justifyContent: "space-between",
+        minWidth: "100%",
         opacity: 0.6,
-      })
+      });
     } else {
       if (!isMobile) {
         setstyleNavbar({
           zIndex: 3,
-          position: 'absolute',
+          position: "absolute",
           top: 0,
-          display: 'flex',
-          alignItems: 'center',
-          flexDirection: 'row',
-          justifyContent: 'space-between',
-          minWidth: '100%',
+          display: "flex",
+          alignItems: "center",
+          flexDirection: "row",
+          justifyContent: "space-between",
+          minWidth: "100%",
           opacity: 0.6,
-          marginTop: '3.3rem',
-        })
+          marginTop: "3.3rem",
+        });
       }
     }
   };
 
   useEffect(() => {
-    window.addEventListener('scroll', handleScroll, { passive: true });
+    window.addEventListener("scroll", handleScroll, { passive: true });
     return () => {
-      window.removeEventListener('scroll', handleScroll);
+      window.removeEventListener("scroll", handleScroll);
     };
   }, []);
 
@@ -51,93 +50,122 @@ export default function Header({ activeItem = "" }) {
       setstyleNavbar({
         top: 0,
         left: 0,
-      })
+      });
     } else {
       setstyleNavbar({
         zIndex: 3,
-        position: 'absolute',
+        position: "absolute",
         top: 0,
-        display: 'flex',
-        alignItems: 'center',
-        flexDirection: 'row',
-        justifyContent: 'space-between',
-        minWidth: '100%',
+        display: "flex",
+        alignItems: "center",
+        flexDirection: "row",
+        justifyContent: "space-between",
+        minWidth: "100%",
         opacity: 0.6,
-        marginTop: '3.3rem',
-
-      })
+        marginTop: "3.3rem",
+      });
     }
 
     return () => {
-      setstyleNavbar({})
-    }
-
-
+      setstyleNavbar({});
+    };
   }, [isMobile]);
 
-  const [typeCol, settypeCol] = useState('col-8')
+  const [typeCol, settypeCol] = useState("col-8");
   useEffect(() => {
     if (isMobile) {
-      settypeCol('col-8')
+      settypeCol("col-8");
     } else {
-      settypeCol('col')
+      settypeCol("col");
     }
-  }, [])
+  }, []);
 
   return (
     <Navbar style={styleNavbar} expand="md" className="main-navigation">
-      <div id="rowMovil" className="row" >
+      <div id="rowMovil" className="row" style={{ marginRight: "5%" }}>
         <div className={typeCol}>
           <Navbar.Brand href="/">
-            <div className="col">
+            <div className="col" style={{ minWidth: "300px" }}>
               <img src="./img/logocitibest.png" />
 
-              <span style={{
-                borderLeft: '2px solid white',
-                height: '80px',
-                marginLeft: '1rem',
-                fontSize: '2.2rem',
+              <span
+                style={{
+                  borderLeft: "2px solid white",
+                  height: "80px",
+                  marginLeft: "1rem",
+                  fontSize: "2.2rem",
+                }}
+              ></span>
 
-              }}></span>
-
-              <span style={{
-                marginLeft: '1rem',
-                fontSize: '0.8rem',
-                fontWeight: 'bold',
-                color: '#fff',
-              }}>
+              <span
+                style={{
+                  marginLeft: "1rem",
+                  fontSize: "0.8rem",
+                  fontWeight: "bold",
+                  color: "#fff",
+                }}
+              >
                 Support
               </span>
 
-              <img id="logopacto" style={{
-                marginLeft: "8%",
-              }} src="./img/logo_pacto_global.png"
-                className="logo-redpacto" />
+              <img
+                id="logopacto"
+                style={{
+                  marginLeft: "8%",
+                }}
+                src="./img/logo_pacto_global.png"
+                className="logo-redpacto"
+              />
+
+              <img
+                id="logopacto"
+                style={{
+                  marginLeft: "8%",
+                  minWidth: "65px",
+                }}
+                src="./img/secretaria-de-movilidad.png"
+                className="logo-redpacto"
+              />
+
+              <img
+                id="logopacto"
+                style={{
+                  marginLeft: "5%",
+                  minWidth: "65px",
+                }}
+                src="./img/bogota-logo.png"
+                className="logo-redpacto"
+              />
             </div>
-
           </Navbar.Brand>
-
-
         </div>
 
-        {isMobile && (<div style={{
-          padding: '0.9rem',
-        }} className="col ml-1">
-          <Navbar.Toggle style={{
-            float: 'right',
-          }} aria-controls="basic-navbar-nav" />
-        </div>)}
-
+        {isMobile && (
+          <div
+            style={{
+              padding: "0.9rem",
+            }}
+            className="col ml-1"
+          >
+            <Navbar.Toggle
+              style={{
+                float: "right",
+              }}
+              aria-controls="basic-navbar-nav"
+            />
+          </div>
+        )}
       </div>
-
 
       <Navbar.Collapse
         id="basic-navbar-nav"
         className="mr-auto mr-md-0 ml-0 main-menu justify-content-md-end"
       >
-        <Nav style={{
-          paddingLeft: '80px'
-        }} className="me-auto"
+        <Nav
+          style={{
+            paddingLeft: "80px",
+          }}
+          className="me-auto"
           navbar
           fill
           activeKey={activeItem}
@@ -154,20 +182,41 @@ export default function Header({ activeItem = "" }) {
             </Nav.Link>
           ))}
 
-          {isMobile && (<button onClick={() => {
-            window.open("https://citybest-conductores.vercel.app/", "_blank")
-          }} style={{
-            color: '#421B71'
-          }} type="button" className="btn btn-light">!Quiero ser Conductor!</button>)}
-
+          {isMobile && (
+            <button
+              onClick={() => {
+                window.open(
+                  "https://citybest-conductores.vercel.app/",
+                  "_blank"
+                );
+              }}
+              style={{
+                color: "#421B71",
+                minWidth: "188px",
+              }}
+              type="button"
+              className="btn btn-light"
+            >
+              ¡Quiero ser Conductor!
+            </button>
+          )}
         </Nav>
-        {!isMobile && <button onClick={() => {
-          window.open("https://citybest-conductores.vercel.app/", "_blank")
-        }} style={{
-          color: '#421B71'
-        }} type="button" className="btn btn-light">!Quiero ser Conductor!</button>}
+        {!isMobile && (
+          <button
+            onClick={() => {
+              window.open("https://citybest-conductores.vercel.app/", "_blank");
+            }}
+            style={{
+              color: "#421B71",
+              minWidth: "188px",
+            }}
+            type="button"
+            className="btn btn-light"
+          >
+            ¡Quiero ser Conductor!
+          </button>
+        )}
       </Navbar.Collapse>
-
     </Navbar>
   );
 }

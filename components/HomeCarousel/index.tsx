@@ -50,7 +50,7 @@ export default function HomeCarousel() {
             id='slide-01'
             backgroundImage={
               <img
-                src={`${"/img/home/FOTO11.svg"
+                src={`${"/img/home/slider-dinamico-1.2.webp"
                   }`}
               />
             }
@@ -60,7 +60,7 @@ export default function HomeCarousel() {
             id='slide-01'
             backgroundImage={
               <img
-                src={`${"/img/home/FOTO23.svg"
+                src={`${"/img/home/slider-dinamico-2.2.webp"
                   }`}
               />
             }
@@ -70,7 +70,7 @@ export default function HomeCarousel() {
             id='slide-01'
             backgroundImage={
               <img
-                src={`${"/img/home/FOTO24.svg"
+                src={`${"/img/home/slider-dinamico-2.3.webp"
                   }`}
               />
             }

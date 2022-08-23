@@ -23,9 +23,10 @@ export default function MainPromotionalBanner({
 
             {includeFlags && (
               <div className="flags-section">
-                <img src="img/col.svg" alt="" />
-                <img src="img/bol.svg" alt="" />
-                <img src="img/ecua.svg" alt="" />
+                <img src="img/paises/MEXICO.png" alt="" />
+                <img src="img/paises/COLOMBIA.png" alt="" />
+                <img src="img/paises/URUGUAY.png" alt="" />
+                <img src="img/paises/CHILE.png" alt="" />
               </div>
             )}
           </div>
@@ -35,8 +36,7 @@ export default function MainPromotionalBanner({
             className="btn-outline btn-lg w-100 w-md-0"
             size="lg"
             onClick={() => {
-              window.location.href =
-                "https://citybest-conductores.vercel.app/";
+              window.location.href = "https://citybest-conductores.vercel.app/";
             }}
           >
             <span className="mr-2">

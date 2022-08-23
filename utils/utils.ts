@@ -57,4 +57,10 @@ export const PaisesAutorizados = [
     nombre: "Mexico",
     img: "paises/MEXICO.png",
   },
+
+  {
+    id: "Uruguay",
+    nombre: "Uruguay",
+    img: "paises/URUGUAY.png",
+  },
 ];
