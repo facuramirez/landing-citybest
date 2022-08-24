@@ -2,7 +2,9 @@ export default function Footer() {
   return (
     <div className="footer">
       <div className="container">
-        <div className="row">
+        <div 
+        className="row"
+        >
           <div className="col-12">
             <div className="d-flex flex-column justify-content text-center center align-items center">
               <p className="footer-title mb-3 text-primary text-bold">

@@ -29,7 +29,9 @@ function InitialSection() {
 function TravelWithUsSection() {
   return (
     <section className="banner bg-primary  pl-lg-0">
-      <div className="row">
+      <div 
+      className="row"
+      >
         <div className="col-12 col-lg-2 d-none d-lg-flex">
           <img src="img/arrows-third.svg" className="w-80" alt="" />
         </div>

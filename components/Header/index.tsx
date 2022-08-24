@@ -17,7 +17,8 @@ export default function Header({ activeItem = "" }) {
         alignItems: "center",
         flexDirection: "row",
         justifyContent: "space-between",
-        minWidth: "100%",
+        // minWidth: "100%",
+        width: "100%",
         opacity: 0.6,
       });
     } else {
@@ -30,7 +31,9 @@ export default function Header({ activeItem = "" }) {
           alignItems: "center",
           flexDirection: "row",
           justifyContent: "space-between",
-          minWidth: "100%",
+          width: "100%",
+          // minWidth: "100%",
+          // maxWidth: "100%",
           opacity: 0.6,
           marginTop: "3.3rem",
         });
@@ -82,7 +85,9 @@ export default function Header({ activeItem = "" }) {
 
   return (
     <Navbar style={styleNavbar} expand="md" className="main-navigation">
-      <div id="rowMovil" className="row" style={{ marginRight: "5%" }}>
+      <div id="rowMovil" 
+      className="row"
+       style={{ marginRight: "5%" }}>
         <div className={typeCol}>
           <Navbar.Brand href="/">
             <div className="col" style={{ minWidth: "300px" }}>

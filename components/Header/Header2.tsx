@@ -43,6 +43,7 @@ export default function Header2() {
       setstyleNavbar({
         top: 0,
         left: 0,
+        width: "100%",
       });
     } else {
       setstyleNavbar({
@@ -53,7 +54,9 @@ export default function Header2() {
         alignItems: "center",
         flexDirection: "row",
         justifyContent: "space-between",
-        minWidth: "100%",
+        width: "100%",
+        // minWidth: "100%",
+        // maxWidth: "100%",
         opacity: 0.8,
       });
     }

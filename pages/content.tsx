@@ -43,9 +43,12 @@ export default function Content() {
 
 function FeaturesSection() {
   return (
-    <section className="banner" style={{ padding: "0px", marginBottom: '1rem' }}>
+    <section
+      className="banner"
+      style={{ padding: "0px", marginBottom: "1rem" }}
+    >
       <div className="">
-        <div className="row">
+        <div>
           <img width={"100%"} src="img/franja-mapa-y-textos.webp" alt="" />
 
           {/* <div className="col-12 col-md-4">
@@ -156,7 +159,10 @@ function VehiclesTypesSection() {
           <div className="col-12 col-md-4">
             <FeatureItem
               icon={
-                <img style={{ maxWidth: "100%" }} src="img/boton-citycero-electrico.png" />
+                <img
+                  style={{ maxWidth: "100%" }}
+                  src="img/boton-citycero-electrico.png"
+                />
               }
               title="Vehículos eléctricos"
               description="El costo por kilómetro de los automóviles eléctricos es sustancialmente inferior al de los automóviles de motor de combustión. Es por eso, que todos tus viajes con Citybest serán los más económicos del mercado"
@@ -164,7 +170,12 @@ function VehiclesTypesSection() {
           </div>
           <div className="col-12 col-md-4">
             <FeatureItem
-              icon={<img style={{ maxWidth: "100%" }} src="img/boton-cityzero-gas.png" />}
+              icon={
+                <img
+                  style={{ maxWidth: "100%" }}
+                  src="img/boton-cityzero-gas.png"
+                />
+              }
               title="Vehículos a gas"
               description="El rendimiento de un auto a gas en velocidad y potencia es similar, y en muchos casos hasta mejor, que el de uno a gasolina. Es por eso, que todos tus viajes con Citybest serán los más económicos del mercado"
             />
@@ -172,7 +183,10 @@ function VehiclesTypesSection() {
           <div className="col-12 col-md-4">
             <FeatureItem
               icon={
-                <img style={{ maxWidth: "100%" }} src="img/boton-citycero-hibrido.png" />
+                <img
+                  style={{ maxWidth: "100%" }}
+                  src="img/boton-citycero-hibrido.png"
+                />
               }
               title="Impacto"
               description="En Citybest contribuimos a disminuir la presencia de gases contaminantes en la atmósfera, principalmente el dióxido de carbono (CO2), monóxido de carbono (CO), entre otros."
@@ -246,7 +260,7 @@ const Banner3Columns = () => {
   };
 
   return (
-    <div style={{}} className={!isMobile && "row mb-5"}>
+    <div style={{}} className={!isMobile && "d-flex mb-5"}>
       <div
         style={{
           paddingLeft: 0,
@@ -324,7 +338,9 @@ function GoogleAppStoresSection() {
                 </span>
               </h3>
 
-              <div className="row">
+              <div 
+              className="row"
+              >
                 <div className="col">
                   <img
                     onClick={() => {

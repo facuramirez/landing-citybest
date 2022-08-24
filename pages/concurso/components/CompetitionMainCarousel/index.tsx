@@ -20,7 +20,9 @@ export default function CompetitionMainCarousel() {
                 {image}
               </div>
               <div className="mt-2 mt-lg-0 col-12 col-lg-6 mb-3 order-1 order-lg-2">
-                <div className="row">
+                <div 
+                className="row"
+                >
                   <div className="col-12 col-sm-8  col-xl-8 order-2 order-sm-1 order-lg-1 d-flex justify-content-end justify-lg-content-start">
                     {title}
                   </div>
